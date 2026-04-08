@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bioglowred.com/sitemap.xml
