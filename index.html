@@ -11,6 +11,7 @@
 <meta name="author" content="BioGlow LLC">
 <meta name="geo.region" content="US">
 <link rel="canonical" href="https://bioglowred.com">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -151,6 +152,22 @@ body{background:#0E080A;color:#FAF6F2;font-family:'Outfit',sans-serif;font-weigh
 :root{--red:#C8102E;--deep:#7A0018;--rose:#FF3A5C;--blush:#FFB3C1;--ivory:#FAF6F2;--dark:#0E080A;--card:#1C1014;--muted:#9A7A82;--gold:#C9A96E}
 a{text-decoration:none;color:inherit}
 button{font-family:'Outfit',sans-serif;cursor:pointer}
+#visitor-pop{
+  position:fixed;bottom:20px;left:20px;
+  background:#1C1014;
+  border:1px solid rgba(200,16,46,.3);
+  border-radius:12px;
+  padding:12px 16px;
+  font-size:.8rem;
+  color:#FAF6F2;
+  z-index:9997;
+  max-width:280px;
+  transform:translateY(100px);
+  opacity:0;
+  transition:all .4s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+}
+
 img{max-width:100%;display:block}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
@@ -941,7 +958,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 <body>
 
 <!-- TOP BANNER -->
-<div class="top-banner">🔥 &nbsp;<strong>LAUNCH SALE — 43% OFF</strong> &nbsp;·&nbsp; Limited Time &nbsp;·&nbsp; 💚 HSA &amp; FSA Accepted &nbsp;·&nbsp; 🚚 Free US Shipping</div>
+<div class="top-banner">🔥 &nbsp;<strong>43% OFF ENDS SOON</strong> &nbsp;·&nbsp; Only <span id="units-left">7</span> units left at this price &nbsp;·&nbsp; 🚚 Free US Shipping &nbsp;·&nbsp; <span id="banner-timer" style="color:#FFD700;font-weight:700"></span></div>
 
 <!-- ══ NAV ══ -->
 <nav id="topnav">
@@ -995,6 +1012,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 <section id="hero" class="hero">
   <div class="hero-bg"></div>
   <div class="hero-badge"><div class="dot"></div>NASA Endorsed · Nobel Prize-Backed</div>
+  <div style="font-size:.78rem;color:rgba(250,246,242,.5);margin-bottom:.5rem">👁️ <span id="live-viewers">23</span> people viewing right now</div>
   <h1>Heal. Renew.<br><em>Illuminate.</em></h1>
   <p class="hero-sub">The same Nobel Prize-winning, NASA-endorsed light therapy used by elite athletes and celebrities — now portable, accessible, and in your hands.</p>
   <div class="pills">
@@ -2298,6 +2316,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 </div>
 </div>
 
+<div id="visitor-pop"></div>
 <!-- TOAST -->
 <div class="toast" id="toast"><span class="toast-t" id="toast-msg"></span></div>
 
@@ -2645,7 +2664,81 @@ setTimeout(function() {
 // ══════════════════════════════════
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('page-home').classList.add('active');
+  startCountdown();
+  simulateVisitors();
 });
+
+function startCountdown() {
+  var end = new Date();
+  end.setHours(23,59,59,0);
+  function tick() {
+    var now = new Date();
+    var diff = end - now;
+    if (diff <= 0) { end.setDate(end.getDate()+1); return; }
+    var h = Math.floor(diff/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    var str = h+'h '+m+'m '+s+'s';
+    var el = document.getElementById('banner-timer');
+    if(el) el.textContent = '⏰ Sale ends in '+str;
+    var el2 = document.getElementById('hero-timer');
+    if(el2) el2.textContent = str;
+    var el3 = document.getElementById('price-timer');
+    if(el3) el3.textContent = str;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+function simulateVisitors() {
+  var first = ['James','Patricia','Michael','Barbara','Robert','Linda','William','Mary','David','Karen','Richard','Susan','Joseph','Jessica','Thomas','Sandra','Charles','Ashley','Christopher','Emily','Daniel','Donna','Matthew','Carol','Anthony','Michelle','Mark','Amanda','Donald','Dorothy','Steven','Melissa','Paul','Deborah','Andrew','Stephanie','Kenneth','Rebecca','Joshua','Sharon','George','Laura','Kevin','Cynthia','Brian','Kathleen','Timothy','Amy','Ronald','Angela','Edward','Shirley','Jason','Anna','Jeffrey','Brenda','Ryan','Pamela','Gary','Emma','Jacob','Nicole','Nicholas','Helen','Eric','Samantha','Jonathan','Katherine','Larry','Christine','Justin','Janet','Terry','Catherine','Sean','Frances','Gerald','Ann','Keith','Joyce','Samuel','Diane','Raymond','Alice','Benjamin','Julie','Gregory','Heather','Frank','Teresa','Alexander','Gloria'];
+  var cities = ['Phoenix AZ','Dallas TX','Miami FL','Denver CO','Atlanta GA','Houston TX','Seattle WA','Chicago IL','Austin TX','Los Angeles CA','Nashville TN','Portland OR','San Diego CA','Charlotte NC','Las Vegas NV','Minneapolis MN','Tampa FL','St. Louis MO','Pittsburgh PA','Sacramento CA','Orlando FL','Cincinnati OH','Kansas City MO','Cleveland OH','Indianapolis IN','Columbus OH','San Antonio TX','Jacksonville FL','Memphis TN','Baltimore MD','Raleigh NC','Louisville KY','Richmond VA','Salt Lake City UT','Hartford CT','Tucson AZ','Fresno CA','Mesa AZ','Omaha NE','Albuquerque NM'];
+  var actions = [
+    'just placed an order',
+    'purchased the BioGlow Red+',
+    'just bought one',
+    'completed their purchase',
+    'ordered — ships tomorrow',
+    'just checked out',
+    'grabbed the last sale unit',
+    'purchased for their mom',
+    'bought for knee pain',
+    'ordered for back pain relief',
+    'just got one for anti-aging',
+    'purchased — excited to try it',
+    'ordered with lifetime warranty'
+  ];
+  var shown = [];
+  function getUnique(arr) {
+    if(shown.length >= arr.length) shown = [];
+    var item;
+    do { item = arr[Math.floor(Math.random()*arr.length)]; } while(shown.indexOf(item) > -1);
+    shown.push(item);
+    return item;
+  }
+  function pop() {
+    var el = document.getElementById('visitor-pop');
+    if(!el) return;
+    var f = getUnique(first);
+    var c = cities[Math.floor(Math.random()*cities.length)];
+    var a = actions[Math.floor(Math.random()*actions.length)];
+    var mins = Math.floor(2 + Math.random()*28);
+    el.innerHTML = '🛍️ <strong>'+f+' from '+c+'</strong><br><span style="font-size:.75rem;color:rgba(250,246,242,.6)">'+a+' · '+mins+' mins ago</span>';
+    el.style.transform = 'translateY(0)';
+    el.style.opacity = '1';
+    setTimeout(function(){ el.style.transform = 'translateY(100px)'; el.style.opacity = '0'; }, 5000);
+  }
+  var delay = 6000 + Math.random()*4000;
+  setTimeout(function(){ pop(); setInterval(function(){ pop(); }, 14000 + Math.random()*8000); }, delay);
+}
+</script>
+
+<script>
+setInterval(function(){
+  var v = Math.floor(18 + Math.random()*15);
+  var el = document.getElementById('live-viewers');
+  if(el) el.textContent = v;
+}, 8000);
 </script>
 </body>
 </html>
