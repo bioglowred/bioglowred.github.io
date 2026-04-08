@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="bioglow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>BioGlow Red+ — Advanced Light Therapy</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,9 +18,8 @@ img{max-width:100%;display:block}
 ::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
 
 /* ── PAGE SYSTEM ── */
-.page{display:none}
-.page.active{display:block!important} 
-#mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0E080A;z-index:9998;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.page{display:none!important}
+.page.active{display:block!important}
 
 /* ── TOP BANNER ── */
 .top-banner{
@@ -81,7 +79,6 @@ img{max-width:100%;display:block}
 ══════════════════════════ */
 #ham-btn{
   display:none;
-  -webkit-tap-highlight-color:transparent!important;
   width:52px;height:52px;
   background:rgba(200,16,46,.15);
   border:2.5px solid rgba(200,16,46,.7);
@@ -116,7 +113,7 @@ img{max-width:100%;display:block}
   position:fixed;
   top:0;left:0;right:0;bottom:0;
   background:#0E080A;
-  z-index:99999;
+  z-index:9998;
   flex-direction:column;
   align-items:center;
   justify-content:center;
@@ -124,7 +121,7 @@ img{max-width:100%;display:block}
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
 }
-#mob-menu.is-open{display:flex!important}
+#mob-menu.is-open{display:flex}
 .mob-logo{
   display:flex;align-items:center;gap:10px;margin-bottom:2rem;
 }
@@ -764,7 +761,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 ══════════════════════════ */
 @media(max-width:1024px){
   .desk-links{display:none}
-  #ham-btn{display:flex!important;visibility:visible!important}
+  #ham-btn{display:flex}
   .two-col,.wgrid,.story-grid,.founders-grid,.pay-grid{grid-template-columns:1fr;gap:2.2rem}
   .tgrid{grid-template-columns:1fr}
   .three-col{grid-template-columns:1fr 1fr}
@@ -793,7 +790,6 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
   .nobel-in{flex-direction:column;gap:.9rem}
 }
 </style>
-<!-- Netlify no-process -->
 </head>
 <body>
 
@@ -1322,19 +1318,15 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 // CORE NAVIGATION — SIMPLE & RELIABLE
 // ══════════════════════════════════
 function goHome() {
-  var home = document.getElementById('page-home');
-  var about = document.getElementById('page-about');
-  if(home) home.classList.add('active');
-  if(about) about.classList.remove('active');
-  window.scrollTo(0,0);
+  document.getElementById('page-home').classList.add('active');
+  document.getElementById('page-about').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function goAbout() {
-  var home = document.getElementById('page-home');
-  var about = document.getElementById('page-about');
-  if(home){ home.classList.remove('active'); home.style.display='none'; }
-  if(about){ about.classList.add('active'); about.style.display='block'; }
-  window.scrollTo(0,0);
+  document.getElementById('page-about').classList.add('active');
+  document.getElementById('page-home').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function gotoSection(id) {
@@ -1350,23 +1342,15 @@ function gotoSection(id) {
 // HAMBURGER MENU
 // ══════════════════════════════════
 function openMob() {
-  var m = document.getElementById('mob-menu');
-  var h = document.getElementById('ham-btn');
-  if(m){ m.classList.add('is-open'); m.style.display='flex'; }
-  if(h){ h.classList.add('is-open'); }
+  document.getElementById('mob-menu').classList.add('is-open');
+  document.getElementById('ham-btn').classList.add('is-open');
   document.body.style.overflow = 'hidden';
-  document.body.style.position = 'fixed';
-  document.body.style.width = '100%';
 }
 
 function closeMob() {
-  var m = document.getElementById('mob-menu');
-  var h = document.getElementById('ham-btn');
-  if(m){ m.classList.remove('is-open'); m.style.display='none'; }
-  if(h){ h.classList.remove('is-open'); }
+  document.getElementById('mob-menu').classList.remove('is-open');
+  document.getElementById('ham-btn').classList.remove('is-open');
   document.body.style.overflow = '';
-  document.body.style.position = '';
-  document.body.style.width = '';
 }
 
 // ══════════════════════════════════
@@ -1465,4 +1449,28 @@ setTimeout(function() {
 var animEls = document.querySelectorAll('.card,.testcard,.wfeat,.mcard,.tcard,.fdr,.ti');
 for (var i = 0; i < animEls.length; i++) {
   animEls[i].style.opacity = '0';
-  animEls[i].style.transform = 'tran
+  animEls[i].style.transform = 'translateY(22px)';
+}
+var animObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.style.transition = 'opacity .55s ease, transform .55s ease';
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      animObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+setTimeout(function() {
+  for (var i = 0; i < animEls.length; i++) animObs.observe(animEls[i]);
+}, 300);
+
+// ══════════════════════════════════
+// INIT — show home page on load
+// ══════════════════════════════════
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('page-home').classList.add('active');
+});
+</script>
+</body>
+</html>
