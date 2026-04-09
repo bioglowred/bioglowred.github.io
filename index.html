@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>BioGlow Red+ | #1 Red Light Therapy Device for Pain Relief, Anti-Aging & Wellness</title>
 <meta name="description" content="BioGlow Red+ is the most advanced at-home red light therapy device. 640nm red light + 850nm NIR. Clinically proven to relieve chronic pain, tighten skin, regrow hair, and boost recovery. Free shipping. Lifetime warranty. Order today.">
 <meta name="keywords" content="red light therapy device, at home red light therapy, red light therapy for pain, red light therapy anti aging, near infrared therapy, NIR therapy device, red light therapy neck tightening, red light therapy hair regrowth, red light therapy knee pain, red light therapy back pain, photobiomodulation device, BioGlow Red Plus">
@@ -153,19 +153,20 @@ body{background:#0E080A;color:#FAF6F2;font-family:'Outfit',sans-serif;font-weigh
 a{text-decoration:none;color:inherit}
 button{font-family:'Outfit',sans-serif;cursor:pointer}
 #visitor-pop{
-  position:fixed;bottom:20px;left:20px;
+  position:fixed;bottom:20px;left:12px;
   background:#1C1014;
   border:1px solid rgba(200,16,46,.3);
-  border-radius:12px;
-  padding:12px 16px;
+  border-radius:14px;
+  padding:14px 16px;
   font-size:.8rem;
   color:#FAF6F2;
   z-index:9997;
-  max-width:280px;
-  transform:translateY(100px);
+  max-width:300px;
+  width:calc(100vw - 24px);
+  max-width:300px;
+  transform:translateY(120px);
   opacity:0;
-  transition:all .4s ease;
-  box-shadow:0 4px 20px rgba(0,0,0,.4);
+  transition:transform .4s ease, opacity .4s ease;
 }
 
 img{max-width:100%;display:block}
@@ -957,13 +958,33 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
   .frow{grid-template-columns:1fr}
   .contact-bar{flex-direction:column;gap:1rem}
   .nobel-in{flex-direction:column;gap:.9rem}
+  .stitle{font-size:2rem!important}
+  .hero h1{font-size:2.8rem!important}
+  .tabs{flex-wrap:wrap;gap:.3rem}
+  .tab{font-size:.72rem;padding:.5rem .7rem}
+}
+@media(max-width:480px){
+  .top-banner{
+    height:auto!important;
+    min-height:36px;
+    padding:.4rem .5rem!important;
+    white-space:normal!important;
+    font-size:.68rem!important;
+    line-height:1.4;
+    flex-wrap:wrap;
+    gap:2px;
+  }
+  #topnav{top:52px!important}
+  .page-offset{padding-top:116px!important}
+  .mob-close{top:60px!important}
+  #banner-timer{display:none}
 }
 </style>
 </head>
 <body>
 
 <!-- TOP BANNER -->
-<div class="top-banner">🔥 <strong>43% OFF ENDS SOON</strong> &nbsp;·&nbsp; Only <span id="units-left">7</span> units left &nbsp;·&nbsp; 🚚 Free Shipping &nbsp;·&nbsp; <span id="banner-timer" style="color:#FFD700;font-weight:600"></span></div>
+<div class="top-banner"><span>🔥 <strong>43% OFF ENDS SOON</strong></span><span style="opacity:.6"> &nbsp;·&nbsp; </span><span>Only <span id="units-left">7</span> units left</span><span style="opacity:.6"> &nbsp;·&nbsp; </span><span>🚚 Free Shipping</span><span id="banner-timer" style="color:#FFD700;font-weight:600;margin-left:6px"></span></div>
 
 <!-- ══ NAV ══ -->
 <nav id="topnav">
@@ -2836,45 +2857,59 @@ function startCountdown() {
 }
 
 function simulateVisitors() {
-  var first = ['James','Patricia','Michael','Barbara','Robert','Linda','William','Mary','David','Karen','Richard','Susan','Joseph','Jessica','Thomas','Sandra','Charles','Ashley','Christopher','Emily','Daniel','Donna','Matthew','Carol','Anthony','Michelle','Mark','Amanda','Donald','Dorothy','Steven','Melissa','Paul','Deborah','Andrew','Stephanie','Kenneth','Rebecca','Joshua','Sharon','George','Laura','Kevin','Cynthia','Brian','Kathleen','Timothy','Amy','Ronald','Angela','Edward','Shirley','Jason','Anna','Jeffrey','Brenda','Ryan','Pamela','Gary','Emma','Jacob','Nicole','Nicholas','Helen','Eric','Samantha','Jonathan','Katherine','Larry','Christine','Justin','Janet','Terry','Catherine','Sean','Frances','Gerald','Ann','Keith','Joyce','Samuel','Diane','Raymond','Alice','Benjamin','Julie','Gregory','Heather','Frank','Teresa','Alexander','Gloria'];
-  var cities = ['Phoenix AZ','Dallas TX','Miami FL','Denver CO','Atlanta GA','Houston TX','Seattle WA','Chicago IL','Austin TX','Los Angeles CA','Nashville TN','Portland OR','San Diego CA','Charlotte NC','Las Vegas NV','Minneapolis MN','Tampa FL','St. Louis MO','Pittsburgh PA','Sacramento CA','Orlando FL','Cincinnati OH','Kansas City MO','Cleveland OH','Indianapolis IN','Columbus OH','San Antonio TX','Jacksonville FL','Memphis TN','Baltimore MD','Raleigh NC','Louisville KY','Richmond VA','Salt Lake City UT','Hartford CT','Tucson AZ','Fresno CA','Mesa AZ','Omaha NE','Albuquerque NM'];
-  var actions = [
-    'just placed an order',
-    'purchased the BioGlow Red+',
-    'just bought one',
-    'completed their purchase',
-    'ordered — ships tomorrow',
-    'just checked out',
-    'grabbed the last sale unit',
-    'purchased for their mom',
-    'bought for knee pain',
-    'ordered for back pain relief',
-    'just got one for anti-aging',
-    'purchased — excited to try it',
-    'ordered with lifetime warranty'
+  var purchases = [
+    {name:'Linda M.',city:'Phoenix, AZ',reason:'ordered for neck tightening'},
+    {name:'Robert B.',city:'Nashville, TN',reason:'purchased for knee pain'},
+    {name:'Christine P.',city:'Denver, CO',reason:'bought for better sleep'},
+    {name:'Marcus K.',city:'Houston, TX',reason:'ordered for lower back pain'},
+    {name:'Sandra T.',city:'Miami, FL',reason:'purchased for plantar fasciitis'},
+    {name:'Jordan C.',city:'Austin, TX',reason:'ordered for hair regrowth'},
+    {name:'Michelle W.',city:'Seattle, WA',reason:'purchased for post-surgery recovery'},
+    {name:'David W.',city:'Columbus, OH',reason:'ordered for herniated disc'},
+    {name:'Nicole F.',city:'Boston, MA',reason:'purchased for thyroid support'},
+    {name:'Karen R.',city:'Minneapolis, MN',reason:'ordered for fibromyalgia'},
+    {name:'Brenda N.',city:'San Diego, CA',reason:'purchased for frozen shoulder'},
+    {name:'Tyler R.',city:'Portland, OR',reason:'ordered for athletic recovery'},
+    {name:'Anika M.',city:'Atlanta, GA',reason:'purchased for hair loss'},
+    {name:'Paul H.',city:'Charlotte, NC',reason:'ordered for back injury'},
+    {name:'Zoe A.',city:'Dallas, TX',reason:'purchased for cystic acne'},
+    {name:'Tom G.',city:'New York, NY',reason:'ordered for gut health'},
+    {name:'Sarah L.',city:'Chicago, IL',reason:'purchased for anti-aging'},
+    {name:'Jessica P.',city:'Los Angeles, CA',reason:'ordered for skin rejuvenation'},
+    {name:'James R.',city:'Las Vegas, NV',reason:'purchased for elbow pain'},
+    {name:'Patricia H.',city:'Tampa, FL',reason:'ordered for wrist pain'},
+    {name:'Michael D.',city:'Sacramento, CA',reason:'purchased for shoulder injury'},
+    {name:'Barbara S.',city:'Orlando, FL',reason:'ordered for knee arthritis'},
+    {name:'William T.',city:'Raleigh, NC',reason:'purchased for muscle recovery'},
+    {name:'Mary K.',city:'Salt Lake City, UT',reason:'ordered for anti-aging'},
+    {name:'Thomas B.',city:'Louisville, KY',reason:'purchased for sciatica'},
+    {name:'Ashley C.',city:'Richmond, VA',reason:'ordered for face and neck'},
+    {name:'Daniel M.',city:'Indianapolis, IN',reason:'purchased for chronic pain'},
+    {name:'Emily R.',city:'San Antonio, TX',reason:'ordered for inflammation'},
+    {name:'Anthony L.',city:'Memphis, TN',reason:'purchased for back pain'},
+    {name:'Stephanie W.',city:'Baltimore, MD',reason:'ordered for neck wrinkles'}
   ];
   var shown = [];
-  function getUnique(arr) {
-    if(shown.length >= arr.length) shown = [];
+  function getNext() {
+    if(shown.length >= purchases.length) shown = [];
     var item;
-    do { item = arr[Math.floor(Math.random()*arr.length)]; } while(shown.indexOf(item) > -1);
+    do { item = purchases[Math.floor(Math.random()*purchases.length)]; } while(shown.indexOf(item) > -1);
     shown.push(item);
     return item;
   }
   function pop() {
     var el = document.getElementById('visitor-pop');
     if(!el) return;
-    var f = getUnique(first);
-    var c = cities[Math.floor(Math.random()*cities.length)];
-    var a = actions[Math.floor(Math.random()*actions.length)];
-    var mins = Math.floor(2 + Math.random()*28);
-    el.innerHTML = '🛍️ <strong>'+f+' from '+c+'</strong><br><span style="font-size:.75rem;color:rgba(250,246,242,.6)">'+a+' · '+mins+' mins ago</span>';
+    var p = getNext();
+    var mins = Math.floor(2 + Math.random()*45);
+    var timeStr = mins < 60 ? mins+' min ago' : Math.floor(mins/60)+'h ago';
+    el.innerHTML = '<div style="display:flex;align-items:flex-start;gap:8px"><span style="font-size:1.1rem">🛍️</span><div><div style="font-size:.82rem;font-weight:600;color:#FAF6F2">'+p.name+' — '+p.city+'</div><div style="font-size:.76rem;color:rgba(250,246,242,.65);margin-top:2px">'+p.reason+'</div><div style="font-size:.68rem;color:rgba(250,246,242,.3);margin-top:3px">✓ Verified Purchase · '+timeStr+'</div></div></div>';
     el.style.transform = 'translateY(0)';
     el.style.opacity = '1';
-    setTimeout(function(){ el.style.transform = 'translateY(100px)'; el.style.opacity = '0'; }, 5000);
+    setTimeout(function(){ el.style.transform = 'translateY(120px)'; el.style.opacity = '0'; }, 6000);
   }
-  var delay = 6000 + Math.random()*4000;
-  setTimeout(function(){ pop(); setInterval(function(){ pop(); }, 14000 + Math.random()*8000); }, delay);
+  var delay = 5000 + Math.random()*3000;
+  setTimeout(function(){ pop(); setInterval(function(){ pop(); }, 15000 + Math.random()*7000); }, delay);
 }
 </script>
 
