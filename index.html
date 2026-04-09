@@ -178,16 +178,21 @@ img{max-width:100%;display:block}
 
 /* ── TOP BANNER ── */
 .top-banner{
-  background:linear-gradient(90deg,#7A0018,#C8102E,#7A0018);
-  text-align:center;padding:.65rem 1rem;
-  font-size:.82rem;letter-spacing:.06em;color:#FAF6F2;
+  background:linear-gradient(90deg,#6A0010,#C8102E,#6A0010);
+  text-align:center;padding:.45rem 1rem;
+  font-size:.75rem;letter-spacing:.04em;color:#FAF6F2;
+  position:fixed;top:0;left:0;right:0;
+  z-index:10000;
+  height:36px;
+  display:flex;align-items:center;justify-content:center;
+  white-space:nowrap;overflow:hidden;
 }
 
 /* ══════════════════════════
    NAV - FIXED TOP
 ══════════════════════════ */
 #topnav{
-  position:fixed;top:0;left:0;right:0;
+  position:fixed;top:36px;left:0;right:0;
   z-index:9999;
   height:64px;
   background:rgba(14,8,10,.98);
@@ -290,8 +295,8 @@ img{max-width:100%;display:block}
 }
 .mob-logo-txt b{color:#FF3A5C}
 .mob-close{
-  position:fixed;top:12px;right:12px;
-  width:64px;height:64px;
+  position:fixed;top:46px;right:12px;
+  width:56px;height:56px;
   background:rgba(200,16,46,.25);
   border:2.5px solid rgba(200,16,46,.7);
   border-radius:50%;
@@ -339,7 +344,7 @@ img{max-width:100%;display:block}
 /* ══════════════════════════
    CONTENT OFFSET
 ══════════════════════════ */
-.page-offset{padding-top:64px}
+.page-offset{padding-top:100px}
 
 /* ══════════════════════════
    HERO
@@ -958,7 +963,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 <body>
 
 <!-- TOP BANNER -->
-<div class="top-banner">🔥 &nbsp;<strong>43% OFF ENDS SOON</strong> &nbsp;·&nbsp; Only <span id="units-left">7</span> units left at this price &nbsp;·&nbsp; 🚚 Free US Shipping &nbsp;·&nbsp; <span id="banner-timer" style="color:#FFD700;font-weight:700"></span></div>
+<div class="top-banner">🔥 <strong>43% OFF ENDS SOON</strong> &nbsp;·&nbsp; Only <span id="units-left">7</span> units left &nbsp;·&nbsp; 🚚 Free Shipping &nbsp;·&nbsp; <span id="banner-timer" style="color:#FFD700;font-weight:600"></span></div>
 
 <!-- ══ NAV ══ -->
 <nav id="topnav">
