@@ -280,8 +280,9 @@ img{max-width:100%;display:block}
 
 /* Desktop nav links */
 .desk-links{
-  display:flex;gap:1.5rem;list-style:none;align-items:center;
+  display:flex;gap:.8rem;list-style:none;align-items:center;flex-wrap:nowrap;
 }
+.desk-links a{font-size:.82rem}
 .desk-links a{
   color:rgba(250,246,242,.7);font-size:.78rem;
   letter-spacing:.1em;text-transform:uppercase;
@@ -989,6 +990,13 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 /* ══════════════════════════
    RESPONSIVE
 ══════════════════════════ */
+@media(min-width:1025px){
+  .portal-mini-nav{display:none!important}
+  #page-family .portal-content,
+  #page-wholesale .portal-content{padding-top:120px}
+  #page-family > div,
+  #page-wholesale > div{padding-top:120px}
+}
 @media(max-width:1024px){
   .desk-links{display:none}
   #ham-btn{display:flex}
@@ -1058,7 +1066,11 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
     <li><a onclick="goHome();gotoSection('treatments')">Treatments</a></li>
     <li><a onclick="goAbout()">Founders</a></li>
     <li><a onclick="goHome();gotoSection('testimonials')">Reviews</a></li>
-    <li><a onclick="goHome();gotoSection('warranty')">Warranty &amp; Coverage</a></li>
+    <li><a onclick="goHome();gotoSection('write-review')">Write a Review</a></li>
+    <li><a onclick="goHome();gotoSection('warranty')">Warranty</a></li>
+    <li><a onclick="goHome();gotoSection('faq')">FAQ</a></li>
+    <li><a onclick="goFamily()" style="color:#C9A96E;font-weight:500">✦ Friends &amp; Family</a></li>
+    <li><a onclick="goWholesale()" style="color:#C9A96E;font-weight:500">🔑 Wholesale</a></li>
     <li><a class="buy-btn" onclick="location.href=_d(_uM)">Order Now</a></li>
   </ul>
   <button id="ham-btn" aria-label="Open menu" onclick="openMob()" ontouchstart="event.preventDefault();openMob();">
@@ -2284,8 +2296,8 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 <div id="page-family" class="page">
 <div style="min-height:100vh;background:#0E080A;padding:0">
 
-  <!-- Top nav bar -->
-  <div style="height:64px;background:rgba(14,8,10,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
+  <!-- Top nav bar - mobile only -->
+  <div class="portal-mini-nav" style="height:64px;background:rgba(14,8,10,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
     <button type="button"
       onclick="goHome()"
       ontouchstart="event.preventDefault();goHome();"
@@ -2377,8 +2389,8 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 <div id="page-wholesale" class="page">
 <div style="min-height:100vh;background:#0E080A;padding:0">
 
-  <!-- Top nav bar -->
-  <div style="height:64px;background:rgba(14,8,10,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
+  <!-- Top nav bar - mobile only -->
+  <div class="portal-mini-nav" style="height:64px;background:rgba(14,8,10,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
     <button type="button"
       onclick="goHome()"
       ontouchstart="event.preventDefault();goHome();"
@@ -2666,7 +2678,7 @@ function goFamily() {
   pages.forEach(function(p){ document.getElementById(p).classList.remove('active'); });
   document.getElementById('page-family').classList.add('active');
   var nav = document.getElementById('topnav');
-  if(nav) nav.style.display = 'none';
+  if(nav && window.innerWidth < 1024) nav.style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -2683,7 +2695,7 @@ function goWholesale() {
   ['page-home','page-about','page-family'].forEach(function(p){ document.getElementById(p).classList.remove('active'); });
   document.getElementById('page-wholesale').classList.add('active');
   var nav = document.getElementById('topnav');
-  if(nav) nav.style.display = 'none';
+  if(nav && window.innerWidth < 1024) nav.style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
