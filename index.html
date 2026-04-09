@@ -879,7 +879,7 @@ img{max-width:100%;display:block}
    ABOUT PAGE
 ══════════════════════════ */
 .about-top-nav{
-  position:fixed;top:0;left:0;right:0;z-index:9999;
+  position:fixed;top:36px;left:0;right:0;z-index:9998;
   height:64px;background:rgba(14,8,10,.98);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(200,16,46,.2);
@@ -2706,6 +2706,8 @@ function goWholesale() {
 function goAbout() {
   document.getElementById('page-about').classList.add('active');
   document.getElementById('page-home').classList.remove('active');
+  var nav = document.getElementById('topnav');
+  if(nav) nav.style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
