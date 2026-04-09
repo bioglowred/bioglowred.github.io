@@ -993,6 +993,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
   <div class="mob-nav-item" onclick="closeMob();goHome();gotoSection('treatments')">Treatments</div>
   <div class="mob-nav-item" onclick="closeMob();goAbout()">👥 Founders &amp; Our Story</div>
   <div class="mob-nav-item" onclick="closeMob();goHome();gotoSection('testimonials')">Reviews</div>
+  <div class="mob-nav-item" onclick="closeMob();goHome();gotoSection('write-review')">✍️ &nbsp;Write a Review</div>
   <div class="mob-nav-item" onclick="closeMob();goHome();gotoSection('warranty')">🛡️ Lifetime Warranty &amp; Coverage</div>
   <div class="mob-nav-item" onclick="closeMob();goHome();gotoSection('faq')">FAQ</div>
   <div class="mob-nav-item" onclick="closeMob();goFamily()" style="color:#C9A96E;border-top:1px solid rgba(201,169,110,.15)">✦ &nbsp;Friends &amp; Family Portal</div>
@@ -1723,6 +1724,95 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
   </div>
 </section>
 
+
+<!-- WRITE A REVIEW -->
+<section class="pad" id="write-review" style="background:rgba(255,255,255,.015);border-top:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:700px;margin:0 auto">
+
+    <div class="ctr" style="margin-bottom:2rem">
+      <span class="slbl">Share Your Experience</span>
+      <h2 class="stitle">Write a Review</h2>
+      <p class="ssub" style="max-width:500px;margin:.5rem auto 0">Purchased a BioGlow Red+? Your story helps others heal. Leave your review below — we read every single one.</p>
+    </div>
+
+    <!-- SUCCESS MESSAGE (hidden) -->
+    <div id="review-success" style="display:none;background:rgba(0,180,0,.08);border:1px solid rgba(0,180,0,.25);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1.5rem">
+      <div style="font-size:2rem;margin-bottom:.5rem">✅</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#FAF6F2;margin-bottom:.3rem">Thank you for your review!</div>
+      <div style="font-size:.85rem;color:rgba(250,246,242,.5)">We'll review it and add it to our testimonials page. We appreciate you!</div>
+    </div>
+
+    <!-- REVIEW FORM -->
+    <div id="review-form-wrap" style="background:#1C1014;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:2rem;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#C8102E,transparent)"></div>
+
+      <!-- STAR RATING -->
+      <div style="margin-bottom:1.5rem">
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,242,.4);margin-bottom:.6rem">Your Rating</div>
+        <div id="star-row" style="display:flex;gap:8px">
+          <span class="rv-star" data-val="1" onclick="setStars(1)" style="font-size:2.2rem;cursor:pointer;color:rgba(255,255,255,.2);transition:color .15s">★</span>
+          <span class="rv-star" data-val="2" onclick="setStars(2)" style="font-size:2.2rem;cursor:pointer;color:rgba(255,255,255,.2);transition:color .15s">★</span>
+          <span class="rv-star" data-val="3" onclick="setStars(3)" style="font-size:2.2rem;cursor:pointer;color:rgba(255,255,255,.2);transition:color .15s">★</span>
+          <span class="rv-star" data-val="4" onclick="setStars(4)" style="font-size:2.2rem;cursor:pointer;color:rgba(255,255,255,.2);transition:color .15s">★</span>
+          <span class="rv-star" data-val="5" onclick="setStars(5)" style="font-size:2.2rem;cursor:pointer;color:rgba(255,255,255,.2);transition:color .15s">★</span>
+        </div>
+        <input type="hidden" id="rv-rating" value="0">
+      </div>
+
+      <!-- NAME + LOCATION row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem">
+        <div>
+          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,242,.4);margin-bottom:.4rem">Your Name</div>
+          <input id="rv-name" type="text" placeholder="e.g. Sarah L." autocomplete="name"
+            style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:#FAF6F2;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif">
+        </div>
+        <div>
+          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,242,.4);margin-bottom:.4rem">City, State</div>
+          <input id="rv-location" type="text" placeholder="e.g. Phoenix, AZ" autocomplete="off"
+            style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:#FAF6F2;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif">
+        </div>
+      </div>
+
+      <!-- WHAT DID YOU USE IT FOR -->
+      <div style="margin-bottom:.8rem">
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,242,.4);margin-bottom:.4rem">What did you use it for?</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem" id="tag-row">
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Pain Relief</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Anti-Aging</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Hair Regrowth</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Skin Tightening</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Back Pain</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Knee Pain</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Sleep</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Recovery</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(250,246,242,.5);cursor:pointer;transition:all .2s">Other</span>
+        </div>
+      </div>
+
+      <!-- REVIEW TEXT -->
+      <div style="margin-bottom:1.2rem">
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,242,.4);margin-bottom:.4rem">Your Review</div>
+        <textarea id="rv-text" placeholder="Tell us about your experience — what condition you had, how long you used it, and what results you saw..." rows="5"
+          style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1rem;color:#FAF6F2;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif;resize:vertical;line-height:1.6"></textarea>
+      </div>
+
+      <!-- ERROR MSG -->
+      <div id="rv-error" style="display:none;font-size:.8rem;color:#FF3A5C;margin-bottom:.8rem"></div>
+
+      <!-- SUBMIT -->
+      <button type="button"
+        onclick="submitReview()"
+        ontouchstart="event.preventDefault();submitReview();"
+        style="width:100%;background:#C8102E;color:#FAF6F2;padding:1rem;border-radius:10px;border:none;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;font-family:'Outfit',sans-serif">
+        Submit My Review
+      </button>
+
+      <div style="margin-top:.75rem;font-size:.72rem;color:rgba(250,246,242,.2);text-align:center">Reviews are moderated before publishing · Only verified results are shared</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOUNDERS BANNER -->
 <div class="founders-banner">
   <div style="max-width:680px;margin:0 auto">
@@ -2324,7 +2414,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,.07)}
 // ══════════════════════════════════
 // CORE NAVIGATION — SIMPLE & RELIABLE
 // ══════════════════════════════════
-var _uM=["MDBhUj","hIQmRr","cWJOTj","hCRThy","ODJxVm","UvbW9j","LmVwaX","J0cy55","dWIvLz","pzcHR0","aA=="];
+var _uM=["NjBhUj","hUTmdH","TDBKSj","dWWWQ5","UmRJYz","MvbW9j","LmVwaX","J0cy55","dWIvLz","pzcHR0","aA=="];
 var _uF=["MjBhUj","huaDhX","MTVaWm","JkZzJQ","dzhpTm","MvbW9j","LmVwaX","J0cy55","dWIvLz","pzcHR0","aA=="];
 var _uW=["NTBhUj","hEeGNj","aTlSUj","lWWWRU","QTl3MD","AvbW9j","LmVwaX","J0cy55","dWIvLz","pzcHR0","aA=="];
 var _uN=["MTBhUj","g3MTRP","VDJsbD","FOUWJI","bzZZcz","cvbW9j","LmVwaX","J0cy55","dWIvLz","pzcHR0","aA=="];
@@ -2667,6 +2757,56 @@ document.addEventListener('DOMContentLoaded', function() {
   startCountdown();
   simulateVisitors();
 });
+
+var _rvStars = 0;
+function setStars(n) {
+  _rvStars = n;
+  document.getElementById('rv-rating').value = n;
+  var stars = document.querySelectorAll('.rv-star');
+  stars.forEach(function(s, i) {
+    s.style.color = i < n ? '#FFB800' : 'rgba(255,255,255,.2)';
+  });
+}
+
+function toggleTag(el) {
+  var on = el.getAttribute('data-on') === '1';
+  if (on) {
+    el.setAttribute('data-on','0');
+    el.style.background = 'rgba(255,255,255,.04)';
+    el.style.borderColor = 'rgba(255,255,255,.1)';
+    el.style.color = 'rgba(250,246,242,.5)';
+  } else {
+    el.setAttribute('data-on','1');
+    el.style.background = 'rgba(200,16,46,.15)';
+    el.style.borderColor = 'rgba(200,16,46,.4)';
+    el.style.color = '#FAF6F2';
+  }
+}
+
+function submitReview() {
+  var name = document.getElementById('rv-name').value.trim();
+  var text = document.getElementById('rv-text').value.trim();
+  var rating = parseInt(document.getElementById('rv-rating').value);
+  var errEl = document.getElementById('rv-error');
+
+  if (!name) { errEl.textContent = 'Please enter your name.'; errEl.style.display='block'; return; }
+  if (rating === 0) { errEl.textContent = 'Please select a star rating.'; errEl.style.display='block'; return; }
+  if (text.length < 20) { errEl.textContent = 'Please write at least a sentence about your experience.'; errEl.style.display='block'; return; }
+
+  errEl.style.display = 'none';
+
+  var tags = [];
+  document.querySelectorAll('.rv-tag[data-on="1"]').forEach(function(t){ tags.push(t.textContent); });
+
+  var loc = document.getElementById('rv-location').value.trim();
+  var subject = 'New Review: ' + name + ' — ' + rating + ' stars';
+  var body = 'Name: ' + name + '%0ALocation: ' + loc + '%0ARating: ' + rating + ' stars%0AUsed for: ' + tags.join(', ') + '%0A%0AReview:%0A' + encodeURIComponent(text);
+
+  window.location.href = 'mailto:Justin@bioglowred.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+
+  document.getElementById('review-form-wrap').style.display = 'none';
+  document.getElementById('review-success').style.display = 'block';
+}
 
 function startCountdown() {
   var end = new Date();
