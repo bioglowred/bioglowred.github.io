@@ -221,13 +221,13 @@
 /* ── RESET ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:18px;-webkit-text-size-adjust:100%}
-body{background:#F4ECDC;color:#36291D;font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7}
-:root{--red:#B0863B;--deep:#5C4228;--rose:#A8772E;--blush:#E8D6AC;--ivory:#36291D;--dark:#F4ECDC;--card:#FFFDF8;--muted:#857255;--gold:#9C7A2C}
+body{background:#E7DBBF;color:#36291D;font-family:'Outfit',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.7}
+:root{--red:#B0863B;--deep:#5C4228;--rose:#A8772E;--blush:#E8D6AC;--ivory:#36291D;--dark:#E7DBBF;--card:#F1E7CD;--muted:#5E4D36;--gold:#9C7A2C}
 a{text-decoration:none;color:inherit}
 button{font-family:'Outfit',sans-serif;cursor:pointer}
 #visitor-pop{
   position:fixed;bottom:20px;left:12px;
-  background:#FFFDF8;
+  background:#F1E7CD;
   border:1px solid rgba(176,135,66,.3);
   border-radius:14px;
   padding:14px 16px;
@@ -297,19 +297,20 @@ img{max-width:100%;display:block}
 
 /* Desktop nav links */
 .desk-links{
-  display:flex;gap:.8rem;list-style:none;align-items:center;flex-wrap:nowrap;
+  display:flex;gap:.5rem;list-style:none;align-items:center;flex-wrap:nowrap;min-width:0;
 }
-.desk-links a{font-size:.82rem}
+.desk-links a{font-size:.72rem}
 .desk-links a{
-  color:rgba(58,44,30,.7);font-size:.78rem;
-  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(58,44,30,.94);font-size:.7rem;
+  letter-spacing:.04em;text-transform:uppercase;
+  white-space:nowrap;
   cursor:pointer;transition:color .2s;
   -webkit-tap-highlight-color:transparent;
 }
 .desk-links a:hover{color:#36291D}
 .desk-links .buy-btn{
   background:#B0863B;color:#36291D!important;
-  padding:.45rem 1.2rem;border-radius:5px;font-weight:500;
+  padding:.45rem 1rem;border-radius:5px;font-weight:500;
 }
 .desk-links .buy-btn:hover{background:#5C4228}
 
@@ -351,7 +352,7 @@ img{max-width:100%;display:block}
   display:none;
   position:fixed;
   top:0;left:0;right:0;bottom:0;
-  background:#F4ECDC;
+  background:#E7DBBF;
   z-index:9998;
   flex-direction:column;
   align-items:center;
@@ -399,7 +400,7 @@ img{max-width:100%;display:block}
   text-align:center;
   padding:1rem 1.5rem;
   font-size:1.1rem;
-  color:rgba(58,44,30,.85);
+  color:#36291D;
   border-bottom:1px solid rgba(74,54,30,.08);
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
@@ -458,7 +459,7 @@ img{max-width:100%;display:block}
 .hero h1 em{font-style:italic;color:#A8772E}
 .hero-sub{
   font-size:clamp(.95rem,2vw,1.1rem);
-  line-height:1.85;color:rgba(58,44,30,.65);
+  line-height:1.85;color:rgba(58,44,30,.92);
   max-width:560px;margin:0 auto 1.8rem;
 }
 .pills{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem}
@@ -479,7 +480,7 @@ img{max-width:100%;display:block}
 }
 .btn-red:active,.btn-red:hover{background:#5C4228;transform:translateY(-1px)}
 .btn-ghost{
-  background:transparent;color:rgba(58,44,30,.8);
+  background:transparent;color:rgba(58,44,30,.98);
   border:none;border-bottom:2px solid rgba(58,44,30,.3);
   padding-bottom:3px;font-size:.88rem;
   letter-spacing:.1em;text-transform:uppercase;
@@ -488,18 +489,19 @@ img{max-width:100%;display:block}
 }
 .btn-ghost:hover,.btn-ghost:active{color:#A8772E;border-color:#A8772E}
 .hero-stats{
-  display:flex;border:1px solid rgba(74,54,30,.08);
-  border-radius:12px;overflow:hidden;
-  background:rgba(74,54,30,.02);
+  display:flex;border:1.5px solid rgba(176,135,66,.6);
+  border-radius:16px;overflow:hidden;
+  background:rgba(176,135,66,.05);
+  box-shadow:0 4px 20px rgba(176,135,66,.12);
   width:100%;max-width:560px;margin-top:2.5rem;
 }
 .hstat{
   flex:1;padding:1rem;text-align:center;
-  border-right:1px solid rgba(74,54,30,.08);
+  border-right:1px solid rgba(176,135,66,.28);
 }
 .hstat:last-child{border-right:none}
 .hstat-n{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#36291D;line-height:1}
-.hstat-l{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#857255;margin-top:.25rem}
+.hstat-l{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#5E4D36;margin-top:.25rem}
 .hero-img{
   width:100%;max-width:280px;margin:2.5rem auto 0;
   border-radius:20px;
@@ -515,9 +517,9 @@ img{max-width:100%;display:block}
   display:flex;gap:2.5rem;width:max-content;
   animation:mq 30s linear infinite;
   font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(74,54,30,.88);
+  color:#33271B;
 }
-.mq-track span::before{content:'✦ ';color:rgba(74,54,30,.3)}
+.mq-track span::before{content:'✦ ';color:rgba(74,54,30,.74)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ══════════════════════════
@@ -535,7 +537,7 @@ img{max-width:100%;display:block}
 }
 .trust-lbl{
   font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
-  color:#857255;width:100%;text-align:center;margin-bottom:.3rem;
+  color:#5E4D36;width:100%;text-align:center;margin-bottom:.3rem;
 }
 .trust-items{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
 .ti{
@@ -554,7 +556,7 @@ img{max-width:100%;display:block}
 .slbl{display:block;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:#A8772E;margin-bottom:.7rem}
 .stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:300;line-height:1.15;color:#36291D}
 .stitle em{font-style:italic;color:#E8D6AC}
-.ssub{font-size:.95rem;line-height:1.85;color:rgba(58,44,30,.58);margin-top:.8rem}
+.ssub{font-size:.95rem;line-height:1.85;color:rgba(58,44,30,.9);margin-top:.8rem}
 .pad{padding:4.5rem 1.5rem}
 .inner{max-width:1100px;margin:0 auto}
 .ctr{text-align:center}
@@ -562,7 +564,7 @@ img{max-width:100%;display:block}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
 .card{
-  background:#FFFDF8;border:1px solid rgba(74,54,30,.07);
+  background:#F1E7CD;border:1px solid rgba(74,54,30,.07);
   border-radius:14px;padding:1.8rem;
   transition:all .3s;
 }
@@ -574,7 +576,7 @@ img{max-width:100%;display:block}
   font-size:1.4rem;margin-bottom:1rem;
 }
 .card-title{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.4rem;font-weight:500}
-.card-text{font-size:.88rem;line-height:1.72;color:rgba(58,44,30,.52)}
+.card-text{font-size:.88rem;line-height:1.72;color:rgba(58,44,30,.88)}
 .chip{
   display:inline-block;margin-top:.7rem;font-size:.63rem;
   letter-spacing:.1em;text-transform:uppercase;
@@ -597,7 +599,7 @@ img{max-width:100%;display:block}
 .ntag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.4rem}
 .ntitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:300;color:#36291D;line-height:1.25;margin-bottom:.6rem}
 .ntitle strong{color:#9C7A2C;font-weight:600}
-.ntext{font-size:.9rem;line-height:1.82;color:rgba(58,44,30,.6)}
+.ntext{font-size:.9rem;line-height:1.82;color:rgba(58,44,30,.9)}
 .nquote{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:#9C7A2C;margin-top:.8rem;padding:.5rem 0 .5rem 1rem;border-left:3px solid rgba(201,169,110,.4);line-height:1.65}
 
 /* ══════════════════════════
@@ -605,7 +607,7 @@ img{max-width:100%;display:block}
 ══════════════════════════ */
 .mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:3rem}
 .mcard{
-  background:#FFFDF8;border:1px solid rgba(74,54,30,.07);
+  background:#F1E7CD;border:1px solid rgba(74,54,30,.07);
   border-radius:14px;padding:1.8rem 1.5rem;text-align:center;
   transition:all .3s;cursor:pointer;
   -webkit-tap-highlight-color:transparent;
@@ -614,10 +616,10 @@ img{max-width:100%;display:block}
 .mcard::after{content:'';display:block;height:3px;background:#B0863B;transform:scaleX(0);transition:transform .3s;transform-origin:center;margin-top:1rem;border-radius:2px}
 .mcard.on::after,.mcard:hover::after{transform:scaleX(1)}
 .mhz{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:#A8772E;line-height:1;margin-bottom:.2rem}
-.munit{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#857255;margin-bottom:.9rem}
+.munit{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#5E4D36;margin-bottom:.9rem}
 .mname{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#36291D;margin-bottom:.8rem;font-weight:500}
 .mbens{list-style:none;text-align:left}
-.mbens li{font-size:.85rem;line-height:1.5;color:rgba(58,44,30,.55);padding:.3rem 0;display:flex;gap:.5rem}
+.mbens li{font-size:.85rem;line-height:1.5;color:rgba(58,44,30,.89);padding:.3rem 0;display:flex;gap:.5rem}
 .mbens li::before{content:'→';color:#B0863B;flex-shrink:0}
 
 /* ══════════════════════════
@@ -637,20 +639,20 @@ img{max-width:100%;display:block}
 }
 .price-row{display:flex;align-items:baseline;gap:.9rem;margin:1.2rem 0}
 .price-main{font-family:'Cormorant Garamond',serif;font-size:2.9rem;font-weight:600;color:#36291D}
-.price-old{font-size:1rem;color:#857255;text-decoration:line-through}
+.price-old{font-size:1rem;color:#5E4D36;text-decoration:line-through}
 .price-save{
   font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
   background:rgba(176,135,66,.18);border:1px solid rgba(176,135,66,.35);
   color:#A8772E;padding:.22rem .7rem;border-radius:4px;
 }
-.pdesc{font-size:.92rem;line-height:1.82;color:rgba(58,44,30,.58);margin-bottom:1.5rem}
+.pdesc{font-size:.92rem;line-height:1.82;color:rgba(58,44,30,.9);margin-bottom:1.5rem}
 .specs{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.8rem}
 .spec{
   background:rgba(74,54,30,.03);border:1px solid rgba(74,54,30,.07);
   border-radius:8px;padding:.85rem .9rem;display:flex;align-items:flex-start;gap:.6rem;
 }
 .spec-i{font-size:1rem;margin-top:.05rem}
-.spec-n{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#857255}
+.spec-n{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#5E4D36}
 .spec-v{font-size:.85rem;color:#36291D;margin-top:.1rem}
 .btn-buy{
   display:block;width:100%;background:#B0863B;color:#36291D;
@@ -680,7 +682,7 @@ img{max-width:100%;display:block}
 .tab{
   padding:.55rem 1.2rem;border-radius:50px;
   border:2px solid rgba(74,54,30,.12);background:transparent;
-  color:rgba(58,44,30,.6);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(58,44,30,.9);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
   cursor:pointer;transition:all .25s;
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;
 }
@@ -689,7 +691,7 @@ img{max-width:100%;display:block}
 .tpanel{display:none}
 .tpanel.on{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
 .tcard{
-  background:#FFFDF8;border:1px solid rgba(74,54,30,.07);
+  background:#F1E7CD;border:1px solid rgba(74,54,30,.07);
   border-radius:14px;padding:1.6rem 1.6rem 1.6rem 2rem;
   position:relative;transition:border-color .3s;
 }
@@ -697,26 +699,26 @@ img{max-width:100%;display:block}
 .tcard::before{content:'✳';position:absolute;top:1.4rem;left:.85rem;color:#B0863B;font-size:.85rem}
 .tc-n{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;font-weight:500;margin-bottom:.18rem}
 .tc-f{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#A8772E;margin-bottom:.12rem}
-.tc-s{font-size:.68rem;color:#857255;margin-bottom:.75rem}
-.tc-b{font-size:.85rem;line-height:1.75;color:rgba(58,44,30,.52)}
-.tdisc{text-align:center;margin-top:1.8rem;font-size:.7rem;line-height:1.65;color:rgba(58,44,30,.28);padding:1rem;border:1px solid rgba(74,54,30,.06);border-radius:8px}
+.tc-s{font-size:.68rem;color:#5E4D36;margin-bottom:.75rem}
+.tc-b{font-size:.85rem;line-height:1.75;color:rgba(58,44,30,.88)}
+.tdisc{text-align:center;margin-top:1.8rem;font-size:.7rem;line-height:1.65;color:rgba(58,44,30,.82);padding:1rem;border:1px solid rgba(74,54,30,.06);border-radius:8px}
 
 /* ══════════════════════════
    TESTIMONIALS
 ══════════════════════════ */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3rem}
 .testcard{
-  background:#FFFDF8;border:1px solid rgba(74,54,30,.07);
+  background:#F1E7CD;border:1px solid rgba(74,54,30,.07);
   border-radius:14px;padding:1.8rem;transition:all .3s;
 }
 .testcard:hover{border-color:rgba(176,135,66,.28);transform:translateY(-3px)}
 .stars{color:#B0863B;font-size:.88rem;letter-spacing:3px;margin-bottom:.8rem}
 .tq{font-family:'Cormorant Garamond',serif;font-size:2.5rem;line-height:.5;color:#B0863B;opacity:.28;margin-bottom:.4rem}
-.ttxt{font-size:.88rem;line-height:1.75;color:rgba(58,44,30,.62);font-style:italic;margin-bottom:1.3rem}
+.ttxt{font-size:.88rem;line-height:1.75;color:rgba(58,44,30,.91);font-style:italic;margin-bottom:1.3rem}
 .tauth{display:flex;align-items:center;gap:.8rem}
 .tav{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#B0863B,#5C4228);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:500;color:#36291D;flex-shrink:0}
 .tnm{font-size:.82rem;color:#36291D}
-.tinf{font-size:.7rem;color:#857255;margin-top:.08rem}
+.tinf{font-size:.7rem;color:#5E4D36;margin-top:.08rem}
 .ttag{display:inline-block;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .6rem;border-radius:20px;background:rgba(176,135,66,.1);border:1px solid rgba(176,135,66,.25);color:#A8772E;margin-bottom:.5rem}
 
 /* ══════════════════════════
@@ -727,7 +729,7 @@ img{max-width:100%;display:block}
 .fq{
   display:flex;justify-content:space-between;align-items:center;
   padding:1.3rem 0;cursor:pointer;font-size:.97rem;
-  color:rgba(58,44,30,.85);user-select:none;gap:1rem;
+  color:#36291D;user-select:none;gap:1rem;
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;
 }
 .fq:hover{color:#36291D}
@@ -739,7 +741,7 @@ img{max-width:100%;display:block}
   transition:all .3s;flex-shrink:0;
 }
 .fi.on .fp{transform:rotate(45deg);background:rgba(176,135,66,.12);border-color:#B0863B}
-.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;font-size:.9rem;line-height:1.8;color:rgba(58,44,30,.52)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;font-size:.9rem;line-height:1.8;color:rgba(58,44,30,.88)}
 .fi.on .fa{max-height:200px;padding-bottom:1.1rem}
 
 /* ══════════════════════════
@@ -753,7 +755,7 @@ img{max-width:100%;display:block}
 }
 .founders-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:#36291D;margin-bottom:.8rem}
 .founders-banner h2 em{font-style:italic;color:#A8772E}
-.founders-banner p{font-size:.93rem;line-height:1.75;color:rgba(58,44,30,.55);max-width:580px;margin:0 auto 1.5rem}
+.founders-banner p{font-size:.93rem;line-height:1.75;color:rgba(58,44,30,.89);max-width:580px;margin:0 auto 1.5rem}
 .btn-outline{
   background:transparent;border:2px solid rgba(176,135,66,.5);
   color:#36291D;padding:.9rem 2.2rem;border-radius:6px;
@@ -788,7 +790,7 @@ img{max-width:100%;display:block}
 .wfeat:hover{border-color:rgba(176,135,66,.35);transform:translateX(4px)}
 .wfeat-icon{font-size:1.25rem;flex-shrink:0;margin-top:.05rem}
 .wfeat-title{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#36291D;margin-bottom:.18rem;font-weight:500}
-.wfeat-text{font-size:.85rem;line-height:1.58;color:rgba(58,44,30,.52)}
+.wfeat-text{font-size:.85rem;line-height:1.58;color:rgba(58,44,30,.88)}
 .wprice-row{display:flex;align-items:baseline;gap:.9rem;margin:1.2rem 0}
 .wprice{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:#36291D}
 .wprice-sub{
@@ -818,19 +820,19 @@ img{max-width:100%;display:block}
   text-align:center;max-width:680px;margin:0 auto 2rem;
 }
 .contact-person{min-width:200px}
-.contact-role{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#857255;margin-bottom:.3rem}
+.contact-role{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#5E4D36;margin-bottom:.3rem}
 .contact-email{font-size:.98rem;font-weight:600}
 .contact-email a{color:#A8772E}
 .pay-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;max-width:960px;margin:0 auto;align-items:start}
 .pay-form{
-  background:#FFFDF8;border:1px solid rgba(74,54,30,.09);
+  background:#F1E7CD;border:1px solid rgba(74,54,30,.09);
   border-radius:18px;padding:2.2rem;position:relative;overflow:hidden;
 }
 .pay-form::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#B0863B,transparent)}
 .form-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#36291D;margin-bottom:.25rem}
-.form-sub{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#857255;margin-bottom:1.8rem}
+.form-sub{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#5E4D36;margin-bottom:1.8rem}
 .fg{margin-bottom:1.1rem}
-.flbl{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#857255;margin-bottom:.4rem}
+.flbl{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem}
 .finput{
   width:100%;background:rgba(74,54,30,.05);
   border:2px solid rgba(74,54,30,.1);border-radius:8px;
@@ -840,9 +842,9 @@ img{max-width:100%;display:block}
   -webkit-appearance:none;
 }
 .finput:focus{border-color:rgba(176,135,66,.5);background:rgba(176,135,66,.04)}
-.finput::placeholder{color:rgba(58,44,30,.22)}
+.finput::placeholder{color:rgba(58,44,30,.91)}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.pm-lbl{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#857255;margin:1rem 0 .6rem}
+.pm-lbl{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#5E4D36;margin:1rem 0 .6rem}
 .pm-wrap{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem}
 .pm{border-radius:7px;padding:.38rem .72rem;font-size:.68rem;font-weight:500;letter-spacing:.04em;transition:transform .2s;cursor:default}
 .pm:hover{transform:translateY(-1px)}
@@ -861,7 +863,7 @@ img{max-width:100%;display:block}
 }
 .stripe-box-icon{font-size:1.3rem;margin-bottom:.4rem}
 .stripe-box-title{font-size:.82rem;color:#36291D;font-weight:500;margin-bottom:.25rem}
-.stripe-box-sub{font-size:.75rem;color:#857255;line-height:1.55}
+.stripe-box-sub{font-size:.75rem;color:#5E4D36;line-height:1.55}
 .btn-pay{
   width:100%;background:#B0863B;color:#36291D;
   padding:1.05rem;border-radius:8px;border:none;
@@ -871,12 +873,12 @@ img{max-width:100%;display:block}
   transition:all .25s;
 }
 .btn-pay:active,.btn-pay:hover{background:#5C4228;box-shadow:0 0 28px rgba(176,135,66,.45)}
-.pay-ssl{display:flex;align-items:center;justify-content:center;gap:.4rem;font-size:.72rem;color:#857255;margin-top:.7rem}
+.pay-ssl{display:flex;align-items:center;justify-content:center;gap:.4rem;font-size:.72rem;color:#5E4D36;margin-top:.7rem}
 .pinfo{display:flex;flex-direction:column;gap:1.1rem}
-.pic{background:#FFFDF8;border:1px solid rgba(74,54,30,.07);border-radius:12px;padding:1.3rem}
+.pic{background:#F1E7CD;border:1px solid rgba(74,54,30,.07);border-radius:12px;padding:1.3rem}
 .pic-icon{font-size:1.3rem;margin-bottom:.6rem}
 .pic-title{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.28rem;font-weight:500}
-.pic-text{font-size:.85rem;line-height:1.6;color:rgba(58,44,30,.5)}
+.pic-text{font-size:.85rem;line-height:1.6;color:rgba(58,44,30,.88)}
 
 /* ══════════════════════════
    CTA
@@ -889,7 +891,7 @@ img{max-width:100%;display:block}
 .cta-in{max-width:640px;margin:0 auto;position:relative;z-index:1}
 .cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,5vw,4rem);font-weight:300;line-height:1.1;color:#36291D;margin-bottom:1rem}
 .cta-title em{font-style:italic;color:#A8772E}
-.cta-sub{font-size:.95rem;line-height:1.8;color:rgba(58,44,30,.58);margin-bottom:2.2rem}
+.cta-sub{font-size:.95rem;line-height:1.8;color:rgba(58,44,30,.9);margin-bottom:2.2rem}
 .cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 
 /* ══════════════════════════
@@ -910,9 +912,9 @@ img{max-width:100%;display:block}
 .hawaii{background:linear-gradient(145deg,#1E1015,#120A0E);border:1px solid rgba(176,135,66,.2);border-radius:18px;padding:2rem}
 .hitem{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.75rem}
 .hdot{width:7px;height:7px;border-radius:50%;background:#B0863B;flex-shrink:0;margin-top:.4rem}
-.htxt{font-size:.85rem;line-height:1.6;color:rgba(58,44,30,.6)}
+.htxt{font-size:.85rem;line-height:1.6;color:rgba(58,44,30,.9)}
 .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.fdr{background:#FFFDF8;border:1px solid rgba(74,54,30,.08);border-radius:18px;overflow:hidden;transition:all .3s}
+.fdr{background:#F1E7CD;border:1px solid rgba(74,54,30,.08);border-radius:18px;overflow:hidden;transition:all .3s}
 .fdr:hover{border-color:rgba(176,135,66,.3);transform:translateY(-3px)}
 .fdr-header{height:420px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.fdr-header img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block}.fdr-photo-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,20,12,.30),transparent 40%);pointer-events:none}
 .fdr-init{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(58,44,30,.05);user-select:none}
@@ -921,11 +923,11 @@ img{max-width:100%;display:block}
 .fdr-body{padding:1.6rem}
 .fdr-name{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:#36291D;margin-bottom:.2rem}
 .fdr-title{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.9rem}
-.fdr-bio{font-size:.85rem;line-height:1.75;color:rgba(58,44,30,.55);margin-bottom:1rem}
-.fdr-quote{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:rgba(58,44,30,.7);border-left:2px solid rgba(176,135,66,.4);padding:.45rem 0 .45rem .9rem;line-height:1.6}
+.fdr-bio{font-size:.85rem;line-height:1.75;color:rgba(58,44,30,.89);margin-bottom:1rem}
+.fdr-quote{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:rgba(58,44,30,.94);border-left:2px solid rgba(176,135,66,.4);padding:.45rem 0 .45rem .9rem;line-height:1.6}
 .fdr-email{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.78rem;color:#A8772E;border-bottom:1px solid rgba(176,135,66,.3);padding-bottom:2px}
 .mission-sec{padding:4rem 1.5rem;max-width:820px;margin:0 auto;text-align:center}
-.mission-txt{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.7rem);font-weight:300;line-height:1.7;color:rgba(58,44,30,.78);margin:1.5rem 0}
+.mission-txt{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.7rem);font-weight:300;line-height:1.7;color:rgba(58,44,30,.97);margin:1.5rem 0}
 .mission-txt em{font-style:italic;color:#A8772E}
 .mvals{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
 .mval{background:rgba(176,135,66,.08);border:1px solid rgba(176,135,66,.22);padding:.5rem 1.2rem;border-radius:20px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#E8D6AC}
@@ -940,15 +942,15 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
 .ft-logo img{width:34px;height:34px;object-fit:contain}
 .ft-logo-txt{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.15em;color:#36291D}
 .ft-logo-txt b{color:#A8772E}
-.ft-desc{font-size:.82rem;line-height:1.72;color:rgba(58,44,30,.38);max-width:230px}
+.ft-desc{font-size:.82rem;line-height:1.72;color:rgba(58,44,30,.74);max-width:230px}
 .ft-col h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#36291D;margin-bottom:1.1rem;font-weight:500}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.ft-col ul a{font-size:.85rem;color:rgba(58,44,30,.42);cursor:pointer;transition:color .2s;-webkit-tap-highlight-color:transparent}
+.ft-col ul a{font-size:.85rem;color:rgba(58,44,30,.97);cursor:pointer;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .ft-col ul a:hover{color:#36291D}
 .ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;border-top:1px solid rgba(74,54,30,.06);flex-wrap:wrap;gap:.8rem}
-.ft-copy{font-size:.73rem;color:#857255}
+.ft-copy{font-size:.73rem;color:#5E4D36}
 .ft-leg{display:flex;gap:1.3rem;flex-wrap:wrap}
-.ft-leg a{font-size:.7rem;color:#857255;cursor:pointer;transition:color .2s}
+.ft-leg a{font-size:.7rem;color:#5E4D36;cursor:pointer;transition:color .2s}
 .ft-leg a:hover{color:#36291D}
 
 /* ══════════════════════════
@@ -960,18 +962,18 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
 .cart-dr.on{transform:translateX(0)}
 .cart-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px solid rgba(74,54,30,.08)}
 .cart-ttl{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;color:#36291D}
-.cart-x{background:none;border:none;color:#857255;font-size:1.4rem;cursor:pointer;transition:color .2s;-webkit-tap-highlight-color:transparent}
+.cart-x{background:none;border:none;color:#5E4D36;font-size:1.4rem;cursor:pointer;transition:color .2s;-webkit-tap-highlight-color:transparent}
 .cart-x:hover{color:#36291D}
 .cart-items{flex:1;overflow-y:auto}
 .cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(74,54,30,.06)}
 .ci{width:56px;height:56px;border-radius:10px;background:rgba(176,135,66,.1);border:1px solid rgba(176,135,66,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
 .cin{font-size:.9rem;color:#36291D;margin-bottom:.2rem}
 .cip{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:#A8772E}
-.cis{font-size:.72rem;color:#857255;margin-top:.15rem;line-height:1.5}
-.cempty{text-align:center;padding:2.5rem 1rem;color:rgba(58,44,30,.28);font-size:.92rem}
+.cis{font-size:.72rem;color:#5E4D36;margin-top:.15rem;line-height:1.5}
+.cempty{text-align:center;padding:2.5rem 1rem;color:rgba(58,44,30,.82);font-size:.92rem}
 .cart-ftr{padding-top:1.2rem;border-top:1px solid rgba(74,54,30,.08)}
 .cart-tr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.1rem}
-.cart-tl{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#857255}
+.cart-tl{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#5E4D36}
 .cart-tv{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:#36291D}
 .cart-co{width:100%;background:#B0863B;color:#36291D;padding:1rem;border-radius:6px;border:none;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:all .25s;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .cart-co:hover,.cart-co:active{background:#5C4228}
@@ -979,7 +981,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
 /* ══════════════════════════
    TOAST
 ══════════════════════════ */
-.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#FFFDF8;border:1px solid rgba(176,135,66,.35);border-radius:12px;padding:.9rem 1.3rem;z-index:10000;transform:translateY(80px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);max-width:320px;box-shadow:0 12px 30px rgba(40,28,16,.4)}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#F1E7CD;border:1px solid rgba(176,135,66,.35);border-radius:12px;padding:.9rem 1.3rem;z-index:10000;transform:translateY(80px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);max-width:320px;box-shadow:0 12px 30px rgba(40,28,16,.4)}
 .toast.on{transform:translateY(0);opacity:1}
 .toast-t{font-size:.85rem;color:#36291D;line-height:1.4}
 
@@ -987,16 +989,16 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
    WAVE BARS
 ══════════════════════════ */
 .wbox{background:rgba(74,54,30,.03);border:1px solid rgba(74,54,30,.07);border-radius:12px;padding:1.6rem}
-.wtitle{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#857255;margin-bottom:1.1rem}
+.wtitle{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#5E4D36;margin-bottom:1.1rem}
 .wrow{display:flex;align-items:center;gap:.9rem;margin-bottom:.75rem}
-.wnm{font-size:.7rem;color:#857255;width:38px;text-align:right;flex-shrink:0;font-weight:500}
+.wnm{font-size:.7rem;color:#5E4D36;width:38px;text-align:right;flex-shrink:0;font-weight:500}
 .wtrack{flex:1;height:7px;background:rgba(74,54,30,.07);border-radius:3px;overflow:hidden}
 .wfill{height:100%;border-radius:3px;transition:width 1.5s ease;width:0}
 .r640 .wfill{background:linear-gradient(90deg,#B0863B,#A8772E)}
 .r850 .wfill{background:linear-gradient(90deg,#6A000E,#B0863B)}
 .r465 .wfill{background:linear-gradient(90deg,#1A2A8B,#3A5AC8)}
-.wpct{font-size:.68rem;color:#857255;width:28px;flex-shrink:0}
-.wlbl{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(58,44,30,.3);width:65px;flex-shrink:0}
+.wpct{font-size:.68rem;color:#5E4D36;width:28px;flex-shrink:0}
+.wlbl{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(58,44,30,.94);width:65px;flex-shrink:0}
 
 /* ══════════════════════════
    ANIMATIONS
@@ -1032,6 +1034,9 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
   .mgrid{grid-template-columns:1fr 1fr}
   .cart-dr{width:100%;max-width:420px}
   .hstat{min-width:calc(50% - 1px)}
+  .hero-stats{flex-wrap:wrap}
+  .hstat:nth-child(2n){border-right:none}
+  .hstat:nth-child(-n+2){border-bottom:1px solid rgba(176,135,66,.28)}
 }
 @media(max-width:640px){
   html{font-size:16px}
@@ -1041,7 +1046,7 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
   .ft-bot{flex-direction:column;text-align:center}
   .ft-leg{justify-content:center}
   .hero-stats{flex-direction:column}
-  .hstat{border-right:none!important;border-bottom:1px solid rgba(74,54,30,.08)}
+  .hstat{border-right:none!important;border-bottom:1px solid rgba(176,135,66,.28)}
   .hstat:last-child{border-bottom:none}
   .hero-btns{flex-direction:column;align-items:center;width:100%}
   .btn-red,.btn-ghost{width:100%;text-align:center}
@@ -1073,10 +1078,10 @@ footer{padding:3rem 1.5rem;border-top:1px solid rgba(74,54,30,.07)}
 }
 
 /* ===== LIGHT LUXURY THEME OVERRIDE ===== */
-body{background:#F4ECDC!important;color:#3A2C1E!important}
+body{background:#E7DBBF!important;color:#3A2C1E!important}
 .top-banner{background:#B0863B!important;color:#2E2114!important;border-bottom:1px solid #9C7A2C}
 .top-banner strong{color:#2E2114!important}
-#topnav{background:#FBF5E9!important;border-bottom:1px solid rgba(60,42,24,.16)!important;box-shadow:0 2px 18px rgba(60,42,24,.06)}
+#topnav{background:#F1E7CD!important;border-bottom:1px solid rgba(60,42,24,.16)!important;box-shadow:0 2px 18px rgba(60,42,24,.06)}
 .logo-txt{color:#3A2C1E!important}.logo-txt b{color:#9C7A2C!important}
 .desk-links a{color:#4A3826!important}
 .desk-links .buy-btn{background:#B0863B!important;color:#2E2114!important}
@@ -1085,9 +1090,14 @@ h1,h2,h3,h4{color:#33271B!important}
 .hero h1 em{color:#A8772E!important}
 .hero-sub{color:#5A4836!important}
 p{color:#4A3826}
-.pill{border:1px solid rgba(176,135,66,.55)!important;color:#8A6A2A!important;background:rgba(176,135,66,.10)!important}
+.pill{border:1px solid rgba(176,135,66,.6)!important;color:#211910!important;background:rgba(176,135,66,.16)!important;font-weight:700!important}
+.live-now{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;letter-spacing:.03em;color:rgba(58,44,30,.91);margin-bottom:.6rem;font-weight:500}
+.live-now b{color:#36291D;font-weight:700}
+.live-eye{width:13px;height:13px;opacity:.75;flex:none}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#2FAE66;flex:none;animation:livePulse 1.8s infinite}
+@keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(47,174,102,.5)}70%{box-shadow:0 0 0 6px rgba(47,174,102,0)}100%{box-shadow:0 0 0 0 rgba(47,174,102,0)}}
 .btn-ghost{color:#4A3826!important;border-color:rgba(60,42,24,.32)!important}
-.card{background:#FFFCF5!important;border:1px solid rgba(60,42,24,.14)!important;box-shadow:0 6px 24px rgba(60,42,24,.05)}
+.card{background:#F1E7CD!important;border:1px solid rgba(60,42,24,.14)!important;box-shadow:0 6px 24px rgba(60,42,24,.05)}
 .hstat-l,.spec-n{color:#7A6A4E!important}
 .hstat-n,.spec-v{color:#33271B!important}
 .hstat{border-bottom:1px solid rgba(60,42,24,.12)!important}
@@ -1101,7 +1111,7 @@ p{color:#4A3826}
 /* warranty section -> light */
 .warranty-wrap .stitle,.warranty-wrap h2{color:#33271B!important}
 .warranty-wrap .ssub{color:#5A4836!important}
-.warranty-wrap .wfeat{background:#FFFCF5!important;border:1px solid rgba(60,42,24,.14)!important;box-shadow:0 6px 24px rgba(60,42,24,.05)!important}
+.warranty-wrap .wfeat{background:#F1E7CD!important;border:1px solid rgba(60,42,24,.14)!important;box-shadow:0 6px 24px rgba(60,42,24,.05)!important}
 .warranty-wrap .wfeat-title{color:#33271B!important}
 .warranty-wrap .wfeat-text{color:#4A3826!important}
 .warranty-wrap .warranty-features{gap:1rem}
@@ -1109,7 +1119,7 @@ p{color:#4A3826}
 /* readability fixes: badge, mission pills, origin card */
 .hero-badge{color:#33271B!important;font-weight:600!important;background:rgba(176,135,66,.16)!important;border:1px solid rgba(176,135,66,.55)!important}
 .mval{color:#33271B!important;font-weight:600!important;background:rgba(176,135,66,.14)!important;border:1px solid rgba(176,135,66,.55)!important}
-.hawaii{background:linear-gradient(145deg,#FFFCF5,#F2E8D6)!important;border:1px solid rgba(60,42,24,.16)!important}
+.hawaii{background:linear-gradient(145deg,#F1E7CD,#F2E8D6)!important;border:1px solid rgba(60,42,24,.16)!important}
 .hawaii div,.hawaii span,.hawaii p,.hawaii li{color:#43331F!important}
 .hawaii strong{color:#9C7A2C!important}
 
@@ -1121,6 +1131,7 @@ p{color:#4A3826}
 .nobel .nquote{color:#7A5E22!important;border-left-color:rgba(176,135,66,.5)!important}
 
 .hero-stats{border:1.5px solid rgba(176,135,66,.65)!important;border-radius:16px!important;overflow:hidden!important}
+@media(max-width:1200px){.desk-links{display:none!important}#ham-btn{display:flex!important}}
 </style>
 </head>
 <body>
@@ -1143,8 +1154,8 @@ p{color:#4A3826}
     <li><a onclick="goHome();gotoSection('write-review')">Write a Review</a></li>
     <li><a onclick="goHome();gotoSection('warranty')">Warranty</a></li>
     <li><a onclick="goHome();gotoSection('faq')">FAQ</a></li>
-    <li><a onclick="goFamily()" style="color:#9C7A2C;font-weight:500">✦ Friends &amp; Family</a></li>
-    <li><a onclick="goWholesale()" style="color:#9C7A2C;font-weight:500">🔑 Wholesale</a></li>
+    <li><a onclick="goFamily()" style="color:#9C7A2C;font-weight:500">Friends &amp; Family</a></li>
+    <li><a onclick="goWholesale()" style="color:#9C7A2C;font-weight:500">Wholesale</a></li>
     <li><a class="buy-btn" onclick="location.href=_d(_uM)">Order Now</a></li>
   </ul>
   <button id="ham-btn" aria-label="Open menu" onclick="openMob()" ontouchstart="event.preventDefault();openMob();">
@@ -1185,7 +1196,7 @@ p{color:#4A3826}
 <section id="hero" class="hero">
   <div class="hero-bg"></div>
   <div class="hero-badge"><div class="dot"></div>NASA Endorsed · Nobel Prize-Backed</div>
-  <div style="font-size:.78rem;color:rgba(58,44,30,.5);margin-bottom:.5rem">👁️ <span id="live-viewers">23</span> people viewing right now</div>
+  <div class="live-now"><span class="live-dot"></span><svg class="live-eye" viewBox="0 0 24 24" fill="none" stroke="#7A5C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><b id="live-viewers">23</b> people viewing right now</div>
   <h1>Heal. Renew.<br><em>Illuminate.</em></h1>
   <p class="hero-sub">The same Nobel Prize-winning, NASA-endorsed light therapy used by elite athletes and celebrities — now portable, accessible, and in your hands.</p>
   <div class="pills">
@@ -1248,14 +1259,14 @@ p{color:#4A3826}
     </div>
     <div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.3rem;background:rgba(176,135,66,.05);border:1px solid rgba(176,135,66,.15);border-radius:12px;margin-bottom:1rem">
-        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.65);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">BioGlow emits photons → activates mitochondria in cells</div>
+        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.92);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">BioGlow emits photons → activates mitochondria in cells</div>
         <div style="color:#B0863B">↓</div>
-        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.65);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">ATP synthesis increases → biochemical changes occur</div>
+        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.92);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">ATP synthesis increases → biochemical changes occur</div>
         <div style="color:#B0863B">↓</div>
-        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.65);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">Cells repair · Collagen produced · Inflammation reduces</div>
+        <div style="font-size:.76rem;text-align:center;color:rgba(58,44,30,.92);padding:.45rem .9rem;background:rgba(74,54,30,.04);border-radius:6px;width:100%;line-height:1.6">Cells repair · Collagen produced · Inflammation reduces</div>
       </div>
-      <div style="background:#FFFDF8;border:1px solid rgba(74,54,30,.07);border-left:3px solid #B0863B;padding:1.2rem 1.4rem;border-radius:0 10px 10px 0;margin-bottom:.9rem"><div style="font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.3rem;font-weight:500">640nm Red Light</div><div style="font-size:.85rem;line-height:1.7;color:rgba(58,44,30,.52)">Penetrates the skin and acts on mitochondria. Accelerates cellular repair, stimulates circulation, and delivers powerful pain relief.</div></div>
-      <div style="background:#FFFDF8;border:1px solid rgba(74,54,30,.07);border-left:3px solid #B0863B;padding:1.2rem 1.4rem;border-radius:0 10px 10px 0;margin-bottom:.9rem"><div style="font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.3rem;font-weight:500">850nm Near-Infrared</div><div style="font-size:.85rem;line-height:1.7;color:rgba(58,44,30,.52)">Penetrates ~3 inches deep. Detoxifies, clears inflammation, repairs scar tissue, and triggers growth of new healthy muscle cells.</div></div>
+      <div style="background:#F1E7CD;border:1px solid rgba(74,54,30,.07);border-left:3px solid #B0863B;padding:1.2rem 1.4rem;border-radius:0 10px 10px 0;margin-bottom:.9rem"><div style="font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.3rem;font-weight:500">640nm Red Light</div><div style="font-size:.85rem;line-height:1.7;color:rgba(58,44,30,.88)">Penetrates the skin and acts on mitochondria. Accelerates cellular repair, stimulates circulation, and delivers powerful pain relief.</div></div>
+      <div style="background:#F1E7CD;border:1px solid rgba(74,54,30,.07);border-left:3px solid #B0863B;padding:1.2rem 1.4rem;border-radius:0 10px 10px 0;margin-bottom:.9rem"><div style="font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#36291D;margin-bottom:.3rem;font-weight:500">850nm Near-Infrared</div><div style="font-size:.85rem;line-height:1.7;color:rgba(58,44,30,.88)">Penetrates ~3 inches deep. Detoxifies, clears inflammation, repairs scar tissue, and triggers growth of new healthy muscle cells.</div></div>
     </div>
   </div>
 </section>
@@ -1273,7 +1284,7 @@ p{color:#4A3826}
     
     <div class="mcard" onclick="setMode(this)"><div class="mhz">1.5</div><div class="munit">Hertz · Pulsed</div><div class="mname">Pulse</div><ul class="mbens"><li>Pain relief &amp; recovery</li><li>Improves circulation</li><li>Reduces inflammation</li></ul></div>
   </div>
-  <div style="text-align:center;margin:2rem auto 0;padding:1.3rem 2rem;background:rgba(176,135,66,.06);border:1px solid rgba(176,135,66,.18);border-radius:10px;max-width:960px;font-size:.9rem;line-height:1.72;color:rgba(58,44,30,.65)"><strong style="color:#36291D">Pro Tip:</strong> Use 1–2 minutes in each mode per session for maximum results across all healing pathways.</div>
+  <div style="text-align:center;margin:2rem auto 0;padding:1.3rem 2rem;background:rgba(176,135,66,.06);border:1px solid rgba(176,135,66,.18);border-radius:10px;max-width:960px;font-size:.9rem;line-height:1.72;color:rgba(58,44,30,.92)"><strong style="color:#36291D">Pro Tip:</strong> Use 1–2 minutes in each mode per session for maximum results across all healing pathways.</div>
 </section>
 
 <!-- PRODUCT -->
@@ -1304,7 +1315,7 @@ p{color:#4A3826}
       <div style="display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.9rem">
         <span style="background:linear-gradient(135deg,#1A7A3A,#22AA50);color:#FFFDF8;border-radius:6px;padding:.32rem .75rem;font-size:.7rem;font-weight:500">💚 HSA / FSA</span>
         <span style="background:linear-gradient(135deg,#1A1F71,#2B35A8);color:#FFFDF8;border-radius:6px;padding:.32rem .75rem;font-size:.7rem;font-weight:500">💳 All Major Cards</span>
-        <span style="background:rgba(74,54,30,.06);border:1px solid rgba(74,54,30,.12);color:rgba(58,44,30,.6);border-radius:6px;padding:.32rem .75rem;font-size:.7rem">🚚 Free Shipping</span>
+        <span style="background:rgba(74,54,30,.06);border:1px solid rgba(74,54,30,.12);color:rgba(58,44,30,.9);border-radius:6px;padding:.32rem .75rem;font-size:.7rem">🚚 Free Shipping</span>
       </div>
     </div>
   </div>
@@ -1321,7 +1332,7 @@ p{color:#4A3826}
     <div class="ctr" style="margin-bottom:2.5rem">
       <span class="slbl" style="color:#A8772E">Real Results · No Filter · No Surgery</span>
       <h2 class="stitle" style="color:#36291D">9 minutes.<br><em style="color:#A8772E">At a county fair.</em></h2>
-      <p style="font-size:1rem;color:rgba(58,44,30,.55);max-width:580px;margin:.8rem auto 0;line-height:1.8">This is not a spa. Not a clinic. Not a $3,000 treatment. This was done standing at a fair booth using the BioGlow Red+ for just 9 minutes on the neck and décolletage. The tightening you see is real — and with our 21-day protocol, it becomes permanent.</p>
+      <p style="font-size:1rem;color:rgba(58,44,30,.89);max-width:580px;margin:.8rem auto 0;line-height:1.8">This is not a spa. Not a clinic. Not a $3,000 treatment. This was done standing at a fair booth using the BioGlow Red+ for just 9 minutes on the neck and décolletage. The tightening you see is real — and with our 21-day protocol, it becomes permanent.</p>
     </div>
 
     <!-- BEFORE / AFTER GRID -->
@@ -1330,7 +1341,7 @@ p{color:#4A3826}
       <!-- BEFORE col -->
       <div>
         <div style="text-align:center;margin-bottom:.75rem">
-          <span style="background:rgba(74,54,30,.08);border:1px solid rgba(74,54,30,.15);color:rgba(58,44,30,.5);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .9rem;border-radius:20px">Before · 0 min</span>
+          <span style="background:rgba(74,54,30,.08);border:1px solid rgba(74,54,30,.15);color:rgba(58,44,30,.88);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .9rem;border-radius:20px">Before · 0 min</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:.6rem">
           <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(74,54,30,.08)">
@@ -1368,20 +1379,20 @@ p{color:#4A3826}
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;max-width:700px;margin:0 auto 2rem;text-align:center">
       <div style="background:rgba(176,135,66,.07);border:1px solid rgba(176,135,66,.2);border-radius:12px;padding:1rem .5rem">
         <div style="font-size:1.8rem;font-weight:500;color:#36291D;font-family:'Cormorant Garamond',serif">9 min</div>
-        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-top:.2rem">session length</div>
+        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-top:.2rem">session length</div>
       </div>
       <div style="background:rgba(176,135,66,.07);border:1px solid rgba(176,135,66,.2);border-radius:12px;padding:1rem .5rem">
         <div style="font-size:1.8rem;font-weight:500;color:#A8772E;font-family:'Cormorant Garamond',serif">21 days</div>
-        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-top:.2rem">to permanent results</div>
+        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-top:.2rem">to permanent results</div>
       </div>
       <div style="background:rgba(176,135,66,.07);border:1px solid rgba(176,135,66,.2);border-radius:12px;padding:1rem .5rem">
         <div style="font-size:1.8rem;font-weight:500;color:#36291D;font-family:'Cormorant Garamond',serif">$0</div>
-        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-top:.2rem">no injections needed</div>
+        <div style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-top:.2rem">no injections needed</div>
       </div>
     </div>
 
     <!-- 21-DAY PROTOCOL BOX -->
-    <div style="background:#FFFDF8;border:1px solid rgba(176,135,66,.3);border-radius:18px;padding:2rem;max-width:800px;margin:0 auto;position:relative;overflow:hidden">
+    <div style="background:#F1E7CD;border:1px solid rgba(176,135,66,.3);border-radius:18px;padding:2rem;max-width:800px;margin:0 auto;position:relative;overflow:hidden">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#B0863B,transparent)"></div>
       <div style="text-align:center;margin-bottom:1.5rem">
         <span style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#A8772E">The protocol behind these results</span>
@@ -1391,15 +1402,15 @@ p{color:#4A3826}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem">
         <div style="background:rgba(74,54,30,.03);border-radius:10px;padding:1rem;border-left:2px solid #B0863B">
           <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#A8772E;margin-bottom:.5rem">Days 1–7 · Daily · 9 min</div>
-          <div style="font-size:.85rem;color:rgba(58,44,30,.65);line-height:1.7">Start at the base of your neck. Hold device 1–2 inches from skin. Sweep slowly upward from collarbone to jaw in smooth lifting motions. Spend 3 minutes on the front, 2 minutes on each side. Use Static mode the entire time.</div>
+          <div style="font-size:.85rem;color:rgba(58,44,30,.92);line-height:1.7">Start at the base of your neck. Hold device 1–2 inches from skin. Sweep slowly upward from collarbone to jaw in smooth lifting motions. Spend 3 minutes on the front, 2 minutes on each side. Use Static mode the entire time.</div>
         </div>
         <div style="background:rgba(74,54,30,.03);border-radius:10px;padding:1rem;border-left:2px solid #B0863B">
           <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#A8772E;margin-bottom:.5rem">Days 8–14 · Daily · 12 min</div>
-          <div style="font-size:.85rem;color:rgba(58,44,30,.65);line-height:1.7">Add the Pulse mode for the first 4 minutes to stimulate deeper collagen production. Then finish with 8 minutes of Static upward strokes. You'll begin to see visible tightening and texture improvement this week.</div>
+          <div style="font-size:.85rem;color:rgba(58,44,30,.92);line-height:1.7">Add the Pulse mode for the first 4 minutes to stimulate deeper collagen production. Then finish with 8 minutes of Static upward strokes. You'll begin to see visible tightening and texture improvement this week.</div>
         </div>
         <div style="background:rgba(74,54,30,.03);border-radius:10px;padding:1rem;border-left:2px solid #B0863B">
           <div style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#A8772E;margin-bottom:.5rem">Days 15–21 · Daily · 10 min</div>
-          <div style="font-size:.85rem;color:rgba(58,44,30,.65);line-height:1.7">Cycle both modes — 2 minutes each. End with Static for the final 2 minutes. By day 21, the collagen remodeling is locked in. Results become structural — not temporary.</div>
+          <div style="font-size:.85rem;color:rgba(58,44,30,.92);line-height:1.7">Cycle both modes — 2 minutes each. End with Static for the final 2 minutes. By day 21, the collagen remodeling is locked in. Results become structural — not temporary.</div>
         </div>
       </div>
 
@@ -1409,7 +1420,7 @@ p{color:#4A3826}
         </div>
       </div>
 
-      <div style="margin-top:1rem;text-align:center;font-size:.68rem;color:rgba(58,44,30,.2);line-height:1.7">FDA DISCLAIMER: Results may vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease.</div>
+      <div style="margin-top:1rem;text-align:center;font-size:.68rem;color:rgba(58,44,30,.91);line-height:1.7">FDA DISCLAIMER: Results may vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure or prevent any disease.</div>
     </div>
 
   </div>
@@ -1427,7 +1438,7 @@ p{color:#4A3826}
 
     <!-- LOCK GATE -->
     <div id="protocol-gate" style="max-width:560px;margin:0 auto 2rem">
-      <div style="background:#FFFDF8;border:1px solid rgba(201,169,110,.25);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
+      <div style="background:#F1E7CD;border:1px solid rgba(201,169,110,.25);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9C7A2C,transparent)"></div>
         <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.3),transparent)"></div>
 
@@ -1437,7 +1448,7 @@ p{color:#4A3826}
         </div>
 
         <!-- TITLE -->
-        <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#857255;margin-bottom:.4rem">Treatment Protocols</div>
+        <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem">Treatment Protocols</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#36291D;margin-bottom:.3rem;line-height:1.1">Exclusive Access</div>
         <div style="width:40px;height:1px;background:rgba(201,169,110,.4);margin:.8rem auto 1.2rem"></div>
 
@@ -1460,7 +1471,7 @@ p{color:#4A3826}
             </svg>
           </div>
           <div style="text-align:left">
-            <div style="font-size:.78rem;color:rgba(58,44,30,.55);line-height:1.9">
+            <div style="font-size:.78rem;color:rgba(58,44,30,.89);line-height:1.9">
               <div>🔴 &nbsp;30+ treatment protocols</div>
               <div>🔴 &nbsp;Every body part covered</div>
               <div>🔴 &nbsp;Anti-aging · Pain · Wellness</div>
@@ -1474,7 +1485,7 @@ p{color:#4A3826}
         <input id="protocol-input" type="password" placeholder="Enter your access code" autocomplete="off" style="width:100%;background:rgba(74,54,30,.04);border:1.5px solid rgba(201,169,110,.25);border-radius:8px;padding:.9rem 1rem;color:#36291D;font-family:'Outfit',sans-serif;font-size:1rem;text-align:center;letter-spacing:.25em;outline:none;margin-bottom:.8rem;-webkit-appearance:none;transition:border-color .2s">
         <button onclick="unlockProtocols()" style="width:100%;background:linear-gradient(135deg,#9C7A2C,#8A6A30);color:#F4ECDC;padding:1rem;border-radius:8px;border:none;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation">✦ &nbsp;Unlock My Protocols</button>
         <div id="gate-error" style="margin-top:.8rem;font-size:.78rem;color:#A8772E;display:none">Incorrect code. Contact us at Justin@bioglowred.com for your code.</div>
-        <div style="margin-top:1.1rem;font-size:.7rem;color:rgba(58,44,30,.25);line-height:1.8">Your access code is emailed to you after purchase.<br>Check your email confirmation for your code.<br>No email? Contact <span style="color:rgba(201,169,110,.5)">Justin@bioglowred.com</span></div>
+        <div style="margin-top:1.1rem;font-size:.7rem;color:rgba(58,44,30,.8);line-height:1.8">Your access code is emailed to you after purchase.<br>Check your email confirmation for your code.<br>No email? Contact <span style="color:rgba(201,169,110,.5)">Justin@bioglowred.com</span></div>
       </div>
     </div>
 
@@ -1484,7 +1495,7 @@ p{color:#4A3826}
       <!-- TEASER text -->
       <div style="text-align:center;margin-bottom:2rem;padding:1.2rem;background:rgba(176,135,66,.06);border:1px solid rgba(176,135,66,.2);border-radius:12px;max-width:780px;margin-left:auto;margin-right:auto">
         <span style="font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#A8772E">🎁 &nbsp;Exclusive access unlocked</span>
-        <p style="font-size:.9rem;color:rgba(58,44,30,.6);margin-top:.4rem;line-height:1.7">These protocols go beyond the basics. Every body part. Anti-aging. Wrinkles. Deep tissue. Sleep. Hair. Organ support. This is the complete BioGlow treatment library — yours free.</p>
+        <p style="font-size:.9rem;color:rgba(58,44,30,.9);margin-top:.4rem;line-height:1.7">These protocols go beyond the basics. Every body part. Anti-aging. Wrinkles. Deep tissue. Sleep. Hair. Organ support. This is the complete BioGlow treatment library — yours free.</p>
       </div>
 
       <!-- TABS -->
@@ -1771,16 +1782,16 @@ p{color:#4A3826}
     <div style="text-align:center">
       <div style="font-size:2.4rem;font-weight:500;color:#36291D;font-family:'Cormorant Garamond',serif;line-height:1">4.9</div>
       <div style="color:#C9A24A;font-size:.9rem;letter-spacing:2px">★★★★★</div>
-      <div style="font-size:.7rem;color:rgba(58,44,30,.35);margin-top:.2rem">Average rating</div>
+      <div style="font-size:.7rem;color:rgba(58,44,30,.72);margin-top:.2rem">Average rating</div>
     </div>
     <div style="flex:1;min-width:180px;display:flex;flex-direction:column;gap:5px">
-      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.4);width:14px">5</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:91%;height:100%;background:#B0863B;border-radius:3px"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.35);width:24px">91%</span></div>
-      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.4);width:14px">4</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:7%;height:100%;background:#B0863B;border-radius:3px;opacity:.5"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.35);width:24px">7%</span></div>
-      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.4);width:14px">3</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:2%;height:100%;background:#B0863B;border-radius:3px;opacity:.3"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.35);width:24px">2%</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.76);width:14px">5</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:91%;height:100%;background:#B0863B;border-radius:3px"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.72);width:24px">91%</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.76);width:14px">4</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:7%;height:100%;background:#B0863B;border-radius:3px;opacity:.5"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.72);width:24px">7%</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:.72rem;color:rgba(58,44,30,.76);width:14px">3</span><div style="flex:1;height:5px;background:rgba(74,54,30,.08);border-radius:3px"><div style="width:2%;height:100%;background:#B0863B;border-radius:3px;opacity:.3"></div></div><span style="font-size:.72rem;color:rgba(58,44,30,.72);width:24px">2%</span></div>
     </div>
     <div style="text-align:center">
       <div style="font-size:1.6rem;font-weight:500;color:#36291D;font-family:'Cormorant Garamond',serif">500+</div>
-      <div style="font-size:.7rem;color:rgba(58,44,30,.35)">Verified reviews</div>
+      <div style="font-size:.7rem;color:rgba(58,44,30,.72)">Verified reviews</div>
     </div>
   </div>
 
@@ -1795,7 +1806,7 @@ p{color:#4A3826}
     <div class="testcard">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Neck &amp; Anti-Aging</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">March 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">March 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1806,7 +1817,7 @@ p{color:#4A3826}
     <div class="testcard">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Knee Pain</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">March 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">March 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1817,7 +1828,7 @@ p{color:#4A3826}
     <div class="testcard">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Hair Regrowth</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">February 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">February 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1828,7 +1839,7 @@ p{color:#4A3826}
     <div class="testcard">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Sleep &amp; Wellness</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">February 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">February 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1839,7 +1850,7 @@ p{color:#4A3826}
     <div class="testcard">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Post-Surgery</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">January 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">January 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1850,7 +1861,7 @@ p{color:#4A3826}
     <div class="testcard" style="position:relative">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
         <div class="ttag">Plantar Fasciitis</div>
-        <div style="font-size:.68rem;color:rgba(58,44,30,.3)">January 2026</div>
+        <div style="font-size:.68rem;color:rgba(58,44,30,.94)">January 2026</div>
       </div>
       <div class="stars">★★★★★</div>
       <div class="tq">"</div>
@@ -1862,36 +1873,36 @@ p{color:#4A3826}
 
   <!-- OLDER REVIEWS LABEL -->
   <div style="max-width:1100px;margin:0 auto 1rem;padding:0 1rem;display:flex;align-items:center;gap:12px">
-    <span style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(58,44,30,.35)">From 2025</span>
+    <span style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(58,44,30,.72)">From 2025</span>
     <div style="flex:1;height:1px;background:rgba(74,54,30,.06)"></div>
   </div>
 
   <!-- 2025 REVIEWS -->
   <div class="tgrid" style="max-width:1100px;margin:0 auto">
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Anti-Aging</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Nov 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Three weeks in and my crow's feet have visibly softened. I use static mode every night and my skin is glowing. I've spent thousands on facials that didn't do what this does in 10 minutes.</p><div class="tauth"><div class="tav">SL</div><div><div class="tnm">Sarah L., 52</div><div class="tinf">✓ Verified Purchase · Chicago, IL</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Anti-Aging</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Nov 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Three weeks in and my crow's feet have visibly softened. I use static mode every night and my skin is glowing. I've spent thousands on facials that didn't do what this does in 10 minutes.</p><div class="tauth"><div class="tav">SL</div><div><div class="tnm">Sarah L., 52</div><div class="tinf">✓ Verified Purchase · Chicago, IL</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Chronic Knee Pain</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Oct 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I had chronic knee pain for years and was told I'd need surgery. After two weeks on the knee protocol, I stopped ibuprofen entirely. My doctor was stunned. This changed my life.</p><div class="tauth"><div class="tav">MK</div><div><div class="tnm">Marcus K., 61</div><div class="tinf">✓ Verified Purchase · Houston, TX</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Chronic Knee Pain</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Oct 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I had chronic knee pain for years and was told I'd need surgery. After two weeks on the knee protocol, I stopped ibuprofen entirely. My doctor was stunned. This changed my life.</p><div class="tauth"><div class="tav">MK</div><div><div class="tnm">Marcus K., 61</div><div class="tinf">✓ Verified Purchase · Houston, TX</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Athletic Recovery</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Oct 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I run ultramarathons. Recovery used to take days. Now I use BioGlow after long runs and I'm back training the next morning. It is not optional for me anymore — I'd sooner leave my shoes at home.</p><div class="tauth"><div class="tav">TR</div><div><div class="tnm">Tyler R., 34</div><div class="tinf">✓ Verified Purchase · Portland, OR</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Athletic Recovery</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Oct 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I run ultramarathons. Recovery used to take days. Now I use BioGlow after long runs and I'm back training the next morning. It is not optional for me anymore — I'd sooner leave my shoes at home.</p><div class="tauth"><div class="tav">TR</div><div><div class="tnm">Tyler R., 34</div><div class="tinf">✓ Verified Purchase · Portland, OR</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Skeptic Converted</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Sep 2025</div></div><div class="stars">★★★★☆</div><div class="tq">"</div><p class="ttxt">Honestly bought this thinking it was probably overhyped. My lower back has been a mess since a car accident in 2019. After 3 weeks I'm not pain free but I'd say 70% better. That's more than any chiropractor managed. Taking one star off only because I wish results were faster but I'm staying consistent.</p><div class="tauth"><div class="tav">PH</div><div><div class="tnm">Paul H., 39</div><div class="tinf">✓ Verified Purchase · Charlotte, NC</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Skeptic Converted</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Sep 2025</div></div><div class="stars">★★★★☆</div><div class="tq">"</div><p class="ttxt">Honestly bought this thinking it was probably overhyped. My lower back has been a mess since a car accident in 2019. After 3 weeks I'm not pain free but I'd say 70% better. That's more than any chiropractor managed. Taking one star off only because I wish results were faster but I'm staying consistent.</p><div class="tauth"><div class="tav">PH</div><div><div class="tnm">Paul H., 39</div><div class="tinf">✓ Verified Purchase · Charlotte, NC</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Hair Loss</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Aug 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I have alopecia and was losing patches fast. Started BioGlow daily before my minoxidil. Within 6 weeks I saw real regrowth in two of the patches. I have recommended this to everyone I know with hair loss.</p><div class="tauth"><div class="tav">AM</div><div><div class="tnm">Anika M., 29</div><div class="tinf">✓ Verified Purchase · Atlanta, GA</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Hair Loss</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Aug 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I have alopecia and was losing patches fast. Started BioGlow daily before my minoxidil. Within 6 weeks I saw real regrowth in two of the patches. I have recommended this to everyone I know with hair loss.</p><div class="tauth"><div class="tav">AM</div><div><div class="tnm">Anika M., 29</div><div class="tinf">✓ Verified Purchase · Atlanta, GA</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Back Pain</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Aug 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Herniated disc at L4-L5 had me on the couch for months. Started the lower back protocol and within a month I was back at work. Months later I'm still going strong. I got my life back.</p><div class="tauth"><div class="tav">DW</div><div><div class="tnm">David W., 47</div><div class="tinf">✓ Verified Purchase · Columbus, OH</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Back Pain</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Aug 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Herniated disc at L4-L5 had me on the couch for months. Started the lower back protocol and within a month I was back at work. Months later I'm still going strong. I got my life back.</p><div class="tauth"><div class="tav">DW</div><div><div class="tnm">David W., 47</div><div class="tinf">✓ Verified Purchase · Columbus, OH</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Fibromyalgia</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Jul 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I've had fibromyalgia for 11 years. I was completely skeptical of this. My rheumatologist actually mentioned red light therapy might help so I took the plunge. This is the first thing in years that has given me real relief on my worst flare days. I use it every single day now.</p><div class="tauth"><div class="tav">KR</div><div><div class="tnm">Karen R., 55</div><div class="tinf">✓ Verified Purchase · Minneapolis, MN</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Fibromyalgia</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Jul 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I've had fibromyalgia for 11 years. I was completely skeptical of this. My rheumatologist actually mentioned red light therapy might help so I took the plunge. This is the first thing in years that has given me real relief on my worst flare days. I use it every single day now.</p><div class="tauth"><div class="tav">KR</div><div><div class="tnm">Karen R., 55</div><div class="tinf">✓ Verified Purchase · Minneapolis, MN</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Professional</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Jun 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">As a licensed aesthetician I was skeptical of at-home devices. The BioGlow Red+ genuinely rivals what I see in clinical settings. The jade stone distributes heat so evenly. My clients keep asking what changed about my skin. I tell them everything.</p><div class="tauth"><div class="tav">JP</div><div><div class="tnm">Jessica P.</div><div class="tinf">✓ Licensed Aesthetician · Los Angeles, CA</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Professional</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Jun 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">As a licensed aesthetician I was skeptical of at-home devices. The BioGlow Red+ genuinely rivals what I see in clinical settings. The jade stone distributes heat so evenly. My clients keep asking what changed about my skin. I tell them everything.</p><div class="tauth"><div class="tav">JP</div><div><div class="tnm">Jessica P.</div><div class="tinf">✓ Licensed Aesthetician · Los Angeles, CA</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Thyroid Support</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">May 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Hashimoto's diagnosis two years ago. Started the thyroid protocol alongside my medication. At my last checkup my endocrinologist reduced my levothyroxine dose for the first time ever. I'm not claiming it cured me but something is clearly working differently.</p><div class="tauth"><div class="tav">NF</div><div><div class="tnm">Nicole F., 41</div><div class="tinf">✓ Verified Purchase · Boston, MA</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Thyroid Support</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">May 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Hashimoto's diagnosis two years ago. Started the thyroid protocol alongside my medication. At my last checkup my endocrinologist reduced my levothyroxine dose for the first time ever. I'm not claiming it cured me but something is clearly working differently.</p><div class="tauth"><div class="tav">NF</div><div><div class="tnm">Nicole F., 41</div><div class="tinf">✓ Verified Purchase · Boston, MA</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Shoulder Injury</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Apr 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Frozen shoulder for 14 months. Could barely lift my arm above my waist. PT wasn't cutting it. Started the shoulder protocol 5 weeks ago. I combed my own hair this morning for the first time in over a year. I actually teared up.</p><div class="tauth"><div class="tav">BN</div><div><div class="tnm">Brenda N., 60</div><div class="tinf">✓ Verified Purchase · San Diego, CA</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Shoulder Injury</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Apr 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">Frozen shoulder for 14 months. Could barely lift my arm above my waist. PT wasn't cutting it. Started the shoulder protocol 5 weeks ago. I combed my own hair this morning for the first time in over a year. I actually teared up.</p><div class="tauth"><div class="tav">BN</div><div><div class="tnm">Brenda N., 60</div><div class="tinf">✓ Verified Purchase · San Diego, CA</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Gut Health</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Mar 2025</div></div><div class="stars">★★★★☆</div><div class="tq">"</div><p class="ttxt">IBS for years. Tried everything. Saw the gut protocol and figured why not. Been doing it 5 weeks. The bloating has dropped significantly — I'd say 60% better. Still not perfect but this is the most relief I've gotten from anything. Genuinely surprised.</p><div class="tauth"><div class="tav">TG</div><div><div class="tnm">Tom G., 36</div><div class="tinf">✓ Verified Purchase · New York, NY</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Gut Health</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Mar 2025</div></div><div class="stars">★★★★☆</div><div class="tq">"</div><p class="ttxt">IBS for years. Tried everything. Saw the gut protocol and figured why not. Been doing it 5 weeks. The bloating has dropped significantly — I'd say 60% better. Still not perfect but this is the most relief I've gotten from anything. Genuinely surprised.</p><div class="tauth"><div class="tav">TG</div><div><div class="tnm">Tom G., 36</div><div class="tinf">✓ Verified Purchase · New York, NY</div></div></div></div>
 
-    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Acne &amp; Skin</div><div style="font-size:.68rem;color:rgba(58,44,30,.3)">Feb 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I'm 24 and have had cystic acne since I was 15. Accutane twice, antibiotics, everything. Three weeks of the acne protocol and my skin is the clearest it has been since middle school. I don't understand the science but I don't care — it works.</p><div class="tauth"><div class="tav">ZA</div><div><div class="tnm">Zoe A., 24</div><div class="tinf">✓ Verified Purchase · Dallas, TX</div></div></div></div>
+    <div class="testcard"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem"><div class="ttag">Acne &amp; Skin</div><div style="font-size:.68rem;color:rgba(58,44,30,.94)">Feb 2025</div></div><div class="stars">★★★★★</div><div class="tq">"</div><p class="ttxt">I'm 24 and have had cystic acne since I was 15. Accutane twice, antibiotics, everything. Three weeks of the acne protocol and my skin is the clearest it has been since middle school. I don't understand the science but I don't care — it works.</p><div class="tauth"><div class="tav">ZA</div><div><div class="tnm">Zoe A., 24</div><div class="tinf">✓ Verified Purchase · Dallas, TX</div></div></div></div>
 
   </div>
 </section>
@@ -1911,22 +1922,22 @@ p{color:#4A3826}
     <div id="review-success" style="display:none;background:rgba(0,180,0,.08);border:1px solid rgba(0,180,0,.25);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1.5rem">
       <div style="font-size:2rem;margin-bottom:.5rem">✅</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#36291D;margin-bottom:.3rem">Thank you for your review!</div>
-      <div style="font-size:.85rem;color:rgba(58,44,30,.5)">We'll review it and add it to our testimonials page. We appreciate you!</div>
+      <div style="font-size:.85rem;color:rgba(58,44,30,.88)">We'll review it and add it to our testimonials page. We appreciate you!</div>
     </div>
 
     <!-- REVIEW FORM -->
-    <div id="review-form-wrap" style="background:#FFFDF8;border:1px solid rgba(74,54,30,.08);border-radius:18px;padding:2rem;position:relative;overflow:hidden">
+    <div id="review-form-wrap" style="background:#F1E7CD;border:1px solid rgba(74,54,30,.08);border-radius:18px;padding:2rem;position:relative;overflow:hidden">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#B0863B,transparent)"></div>
 
       <!-- STAR RATING -->
       <div style="margin-bottom:1.5rem">
-        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-bottom:.6rem">Your Rating</div>
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-bottom:.6rem">Your Rating</div>
         <div id="star-row" style="display:flex;gap:8px">
-          <span class="rv-star" data-val="1" onclick="setStars(1)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.2);transition:color .15s">★</span>
-          <span class="rv-star" data-val="2" onclick="setStars(2)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.2);transition:color .15s">★</span>
-          <span class="rv-star" data-val="3" onclick="setStars(3)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.2);transition:color .15s">★</span>
-          <span class="rv-star" data-val="4" onclick="setStars(4)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.2);transition:color .15s">★</span>
-          <span class="rv-star" data-val="5" onclick="setStars(5)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.2);transition:color .15s">★</span>
+          <span class="rv-star" data-val="1" onclick="setStars(1)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.7);transition:color .15s">★</span>
+          <span class="rv-star" data-val="2" onclick="setStars(2)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.7);transition:color .15s">★</span>
+          <span class="rv-star" data-val="3" onclick="setStars(3)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.7);transition:color .15s">★</span>
+          <span class="rv-star" data-val="4" onclick="setStars(4)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.7);transition:color .15s">★</span>
+          <span class="rv-star" data-val="5" onclick="setStars(5)" style="font-size:2.2rem;cursor:pointer;color:rgba(74,54,30,.7);transition:color .15s">★</span>
         </div>
         <input type="hidden" id="rv-rating" value="0">
       </div>
@@ -1934,12 +1945,12 @@ p{color:#4A3826}
       <!-- NAME + LOCATION row -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem">
         <div>
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-bottom:.4rem">Your Name</div>
+          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-bottom:.4rem">Your Name</div>
           <input id="rv-name" type="text" placeholder="e.g. Sarah L." autocomplete="name"
             style="width:100%;background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:8px;padding:.75rem 1rem;color:#36291D;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif">
         </div>
         <div>
-          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-bottom:.4rem">City, State</div>
+          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-bottom:.4rem">City, State</div>
           <input id="rv-location" type="text" placeholder="e.g. Phoenix, AZ" autocomplete="off"
             style="width:100%;background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:8px;padding:.75rem 1rem;color:#36291D;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif">
         </div>
@@ -1947,23 +1958,23 @@ p{color:#4A3826}
 
       <!-- WHAT DID YOU USE IT FOR -->
       <div style="margin-bottom:.8rem">
-        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-bottom:.4rem">What did you use it for?</div>
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-bottom:.4rem">What did you use it for?</div>
         <div style="display:flex;flex-wrap:wrap;gap:.4rem" id="tag-row">
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Pain Relief</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Anti-Aging</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Hair Regrowth</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Skin Tightening</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Back Pain</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Knee Pain</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Sleep</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Recovery</span>
-          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.5);cursor:pointer;transition:all .2s">Other</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Pain Relief</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Anti-Aging</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Hair Regrowth</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Skin Tightening</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Back Pain</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Knee Pain</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Sleep</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Recovery</span>
+          <span class="rv-tag" onclick="toggleTag(this)" style="background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:20px;padding:.3rem .8rem;font-size:.78rem;color:rgba(58,44,30,.88);cursor:pointer;transition:all .2s">Other</span>
         </div>
       </div>
 
       <!-- REVIEW TEXT -->
       <div style="margin-bottom:1.2rem">
-        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.4);margin-bottom:.4rem">Your Review</div>
+        <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(58,44,30,.76);margin-bottom:.4rem">Your Review</div>
         <textarea id="rv-text" placeholder="Tell us about your experience — what condition you had, how long you used it, and what results you saw..." rows="5"
           style="width:100%;background:rgba(74,54,30,.04);border:1px solid rgba(74,54,30,.1);border-radius:8px;padding:.75rem 1rem;color:#36291D;font-size:.9rem;outline:none;-webkit-appearance:none;box-sizing:border-box;font-family:'Outfit',sans-serif;resize:vertical;line-height:1.6"></textarea>
       </div>
@@ -1979,7 +1990,7 @@ p{color:#4A3826}
         Submit My Review
       </button>
 
-      <div style="margin-top:.75rem;font-size:.72rem;color:rgba(58,44,30,.2);text-align:center">Reviews are moderated before publishing · Only verified results are shared</div>
+      <div style="margin-top:.75rem;font-size:.72rem;color:rgba(58,44,30,.91);text-align:center">Reviews are moderated before publishing · Only verified results are shared</div>
     </div>
 
   </div>
@@ -2079,23 +2090,23 @@ p{color:#4A3826}
         <div style="display:flex;flex-direction:column;gap:.65rem">
           <div style="display:flex;gap:.75rem;align-items:flex-start">
             <span style="color:#A8772E;flex-shrink:0;font-size:.9rem">✕</span>
-            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.5)"><strong style="color:rgba(58,44,30,.7);font-weight:500">Intentional damage.</strong> Damage that is caused deliberately, including dismantling, modification, misuse, or willful destruction of the device is not covered under this warranty.</div>
+            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.88)"><strong style="color:rgba(58,44,30,.94);font-weight:500">Intentional damage.</strong> Damage that is caused deliberately, including dismantling, modification, misuse, or willful destruction of the device is not covered under this warranty.</div>
           </div>
           <div style="display:flex;gap:.75rem;align-items:flex-start">
             <span style="color:#A8772E;flex-shrink:0;font-size:.9rem">✕</span>
-            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.5)"><strong style="color:rgba(58,44,30,.7);font-weight:500">Unauthorized modifications.</strong> Any attempt to open, repair, or modify the device voids warranty coverage. Repairs must be performed or authorized by BioGlow only.</div>
+            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.88)"><strong style="color:rgba(58,44,30,.94);font-weight:500">Unauthorized modifications.</strong> Any attempt to open, repair, or modify the device voids warranty coverage. Repairs must be performed or authorized by BioGlow only.</div>
           </div>
           <div style="display:flex;gap:.75rem;align-items:flex-start">
             <span style="color:#A8772E;flex-shrink:0;font-size:.9rem">✕</span>
-            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.5)"><strong style="color:rgba(58,44,30,.7);font-weight:500">Damage from misuse.</strong> Damage resulting from use outside of the provided instructions — including improper charging, exposure to extreme temperatures, or use with third-party accessories not approved by BioGlow.</div>
+            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.88)"><strong style="color:rgba(58,44,30,.94);font-weight:500">Damage from misuse.</strong> Damage resulting from use outside of the provided instructions — including improper charging, exposure to extreme temperatures, or use with third-party accessories not approved by BioGlow.</div>
           </div>
           <div style="display:flex;gap:.75rem;align-items:flex-start">
             <span style="color:#A8772E;flex-shrink:0;font-size:.9rem">✕</span>
-            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.5)"><strong style="color:rgba(58,44,30,.7);font-weight:500">Theft or loss.</strong> The warranty does not cover lost, stolen, or unrecoverable devices.</div>
+            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.88)"><strong style="color:rgba(58,44,30,.94);font-weight:500">Theft or loss.</strong> The warranty does not cover lost, stolen, or unrecoverable devices.</div>
           </div>
           <div style="display:flex;gap:.75rem;align-items:flex-start">
             <span style="color:#A8772E;flex-shrink:0;font-size:.9rem">✕</span>
-            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.5)"><strong style="color:rgba(58,44,30,.7);font-weight:500">Cosmetic wear.</strong> Normal cosmetic wear such as scratches, scuffs, or fading from regular use are not covered, provided the device still functions correctly.</div>
+            <div style="font-size:.83rem;line-height:1.65;color:rgba(58,44,30,.88)"><strong style="color:rgba(58,44,30,.94);font-weight:500">Cosmetic wear.</strong> Normal cosmetic wear such as scratches, scuffs, or fading from regular use are not covered, provided the device still functions correctly.</div>
           </div>
         </div>
       </div>
@@ -2108,29 +2119,29 @@ p{color:#4A3826}
       <div style="background:linear-gradient(145deg,rgba(176,135,66,.12),rgba(176,135,66,.06));border:1px solid rgba(176,135,66,.3);border-radius:16px;padding:1.8rem;text-align:center">
         <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#B0863B;margin-bottom:.6rem">One-Time · Never Expires</div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:600;color:#36291D;line-height:1">$500</div>
-        <div style="font-size:.78rem;color:rgba(58,44,30,.4);margin:.4rem 0 1.2rem">Single payment · No renewals · Ever</div>
+        <div style="font-size:.78rem;color:rgba(58,44,30,.76);margin:.4rem 0 1.2rem">Single payment · No renewals · Ever</div>
         <div style="background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:10px;padding:.9rem;margin-bottom:1.2rem">
           <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.3rem">The math is simple</div>
-          <div style="font-size:.85rem;color:rgba(58,44,30,.6);line-height:1.7">Replacement device = $3,999<br>Warranty = $500 once<br><strong style="color:#9C7A2C">One replacement saves you $3,499</strong></div>
+          <div style="font-size:.85rem;color:rgba(58,44,30,.9);line-height:1.7">Replacement device = $3,999<br>Warranty = $500 once<br><strong style="color:#9C7A2C">One replacement saves you $3,499</strong></div>
         </div>
         <button class="btn-warranty" onclick="location.href=_d(_uN)">🛡️ &nbsp;Add Lifetime Warranty — $500</button>
-        <div style="margin-top:.75rem;font-size:.72rem;color:#857255">♾️ Never expires &nbsp;·&nbsp; 🔄 Free replacement &nbsp;·&nbsp; 🚚 Free shipping</div>
+        <div style="margin-top:.75rem;font-size:.72rem;color:#5E4D36">♾️ Never expires &nbsp;·&nbsp; 🔄 Free replacement &nbsp;·&nbsp; 🚚 Free shipping</div>
       </div>
 
       <!-- Claim instructions -->
       <div style="background:rgba(74,54,30,.02);border:1px solid rgba(74,54,30,.07);border-radius:14px;padding:1.3rem">
         <div style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#36291D;margin-bottom:.75rem;font-weight:500">How to claim your replacement</div>
         <div style="display:flex;flex-direction:column;gap:.6rem">
-          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.55);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">1.</span><span>Email <strong style="color:#36291D">Justin@bioglowred.com</strong> with your order number and a brief description of the issue.</span></div>
-          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.55);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">2.</span><span>Our team will review your claim and respond within 1–2 business days.</span></div>
-          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.55);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">3.</span><span>Once approved, a brand new BioGlow Red+ ships to you free of charge. No need to return the damaged unit.</span></div>
+          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.89);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">1.</span><span>Email <strong style="color:#36291D">Justin@bioglowred.com</strong> with your order number and a brief description of the issue.</span></div>
+          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.89);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">2.</span><span>Our team will review your claim and respond within 1–2 business days.</span></div>
+          <div style="display:flex;gap:.75rem;font-size:.82rem;color:rgba(58,44,30,.89);line-height:1.6"><span style="color:#B0863B;font-weight:500;flex-shrink:0">3.</span><span>Once approved, a brand new BioGlow Red+ ships to you free of charge. No need to return the damaged unit.</span></div>
         </div>
       </div>
 
       <!-- Legal disclaimer -->
       <div style="background:rgba(74,54,30,.015);border:1px solid rgba(74,54,30,.06);border-radius:12px;padding:1.2rem">
-        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#857255;margin-bottom:.6rem">Warranty disclaimer</div>
-        <p style="font-size:.72rem;line-height:1.75;color:rgba(58,44,30,.28)">This warranty is non-transferable and applies only to the original purchaser of the BioGlow Red+ device. BioGlow reserves the right to determine, at its sole discretion, whether damage is covered under this warranty. BioGlow shall not be held liable for any indirect, incidental, special, or consequential damages resulting from the use or misuse of the device. This warranty gives you specific legal rights and you may also have other rights which vary by location. BioGlow is not responsible for personal injury, property damage, or any other loss arising from intentional misuse, negligence, or use contrary to provided instructions. Claims determined to be the result of deliberate damage, fraud, or misrepresentation will be denied and may be subject to legal action. This warranty is void if the product has been tampered with, modified, or repaired by any unauthorized party.</p>
+        <div style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#5E4D36;margin-bottom:.6rem">Warranty disclaimer</div>
+        <p style="font-size:.72rem;line-height:1.75;color:rgba(58,44,30,.82)">This warranty is non-transferable and applies only to the original purchaser of the BioGlow Red+ device. BioGlow reserves the right to determine, at its sole discretion, whether damage is covered under this warranty. BioGlow shall not be held liable for any indirect, incidental, special, or consequential damages resulting from the use or misuse of the device. This warranty gives you specific legal rights and you may also have other rights which vary by location. BioGlow is not responsible for personal injury, property damage, or any other loss arising from intentional misuse, negligence, or use contrary to provided instructions. Claims determined to be the result of deliberate damage, fraud, or misrepresentation will be denied and may be subject to legal action. This warranty is void if the product has been tampered with, modified, or repaired by any unauthorized party.</p>
       </div>
 
     </div>
@@ -2187,7 +2198,7 @@ p{color:#4A3826}
         <div class="pic"><div class="pic-icon">📦</div><div class="pic-title">What's Included</div><div class="pic-text">BioGlow Red+ Device · USB-C Charging Base · Treatment Guide · Protective Carry Case · Free US Shipping</div></div>
         <div class="pic"><div class="pic-icon">🚚</div><div class="pic-title">Shipping</div><div class="pic-text">Free standard shipping on all US orders. Ships within 2–5 business days.</div></div>
         <div class="pic"><div class="pic-icon">💚</div><div class="pic-title">HSA &amp; FSA Accepted</div><div class="pic-text">Use your HSA or FSA card just like a regular debit card at checkout.</div></div>
-        <div style="background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.04));border:1px solid rgba(201,169,110,.2);border-radius:12px;padding:1.3rem;display:flex;gap:.9rem;align-items:flex-start"><div style="font-size:1.6rem;flex-shrink:0">💰</div><div><div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.22rem;font-weight:500">Financing — Coming Soon</div><div style="font-size:.83rem;line-height:1.58;color:rgba(58,44,30,.5)">Monthly payment plans coming. Email us to join the waitlist.</div></div></div>
+        <div style="background:linear-gradient(135deg,rgba(201,169,110,.1),rgba(201,169,110,.04));border:1px solid rgba(201,169,110,.2);border-radius:12px;padding:1.3rem;display:flex;gap:.9rem;align-items:flex-start"><div style="font-size:1.6rem;flex-shrink:0">💰</div><div><div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.22rem;font-weight:500">Financing — Coming Soon</div><div style="font-size:.83rem;line-height:1.58;color:rgba(58,44,30,.88)">Monthly payment plans coming. Email us to join the waitlist.</div></div></div>
       </div>
     </div>
   </div>
@@ -2217,12 +2228,12 @@ p{color:#4A3826}
       <div class="about-hero-bg"></div>
       <span class="slbl">Our Story</span>
       <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;line-height:1.1;color:#36291D;margin-bottom:1.2rem">Built by two guys who<br>refused to <em style="font-style:italic;color:#A8772E">feel terrible.</em></h1>
-      <p style="font-size:1rem;line-height:1.85;color:rgba(58,44,30,.6);max-width:560px;margin:0 auto 2rem">A chance meeting in Hawaii. A frustration with broken healthcare. A Nobel Prize-winning technology nobody was talking about.</p>
+      <p style="font-size:1rem;line-height:1.85;color:rgba(58,44,30,.9);max-width:560px;margin:0 auto 2rem">A chance meeting in Hawaii. A frustration with broken healthcare. A Nobel Prize-winning technology nobody was talking about.</p>
       <div style="display:flex;justify-content:center">
         <div style="background:rgba(176,135,66,.06);border:1px solid rgba(176,135,66,.2);border-radius:18px;padding:1.8rem 2.5rem;display:inline-flex;flex-direction:column;align-items:center;gap:.7rem">
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:72px" role="img" aria-label="BioGlow Red+ logo"><defs><radialGradient id="ssun" cx="46%" cy="36%" r="64%"><stop offset="0" stop-color="#FCF1CE"/><stop offset=".42" stop-color="#DDB85E"/><stop offset=".8" stop-color="#B0863B"/><stop offset="1" stop-color="#946F28"/></radialGradient></defs><line x1="14.2" y1="27.1" x2="8.4" y2="23.1" stroke="#A8772E" stroke-width="1.9" stroke-linecap="round" opacity="0.95"/><line x1="18.5" y1="23.4" x2="15.2" y2="17.1" stroke="#A8772E" stroke-width="1.9" stroke-linecap="round" opacity="0.95"/><line x1="24.0" y1="22.0" x2="24.0" y2="15.0" stroke="#A8772E" stroke-width="1.9" stroke-linecap="round" opacity="0.95"/><line x1="29.5" y1="23.4" x2="32.8" y2="17.1" stroke="#A8772E" stroke-width="1.9" stroke-linecap="round" opacity="0.95"/><line x1="33.8" y1="27.1" x2="39.6" y2="23.1" stroke="#A8772E" stroke-width="1.9" stroke-linecap="round" opacity="0.95"/><path d="M14 34 A10 10 0 0 1 34 34 Z" fill="url(#ssun)"/><line x1="6" y1="34" x2="42" y2="34" stroke="#B0863B" stroke-width="2" stroke-linecap="round"/></svg>
           <span style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:#36291D;letter-spacing:.2em">Bio<span style="color:#A8772E">Glow</span></span>
-          <span style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#857255">Advanced Light Therapy</span>
+          <span style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#5E4D36">Advanced Light Therapy</span>
         </div>
       </div>
     </div>
@@ -2235,17 +2246,17 @@ p{color:#4A3826}
           <div class="hawaii">
             <div style="font-size:2.8rem;text-align:center;margin-bottom:.7rem">🌺</div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:#36291D;text-align:center;margin-bottom:.3rem">Honolulu, Hawaii</div>
-            <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#857255;text-align:center;margin-bottom:1.3rem">Where it all began</div>
+            <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#5E4D36;text-align:center;margin-bottom:1.3rem">Where it all began</div>
             <div class="hitem"><div class="hdot"></div><div class="htxt"><strong style="color:#36291D">Year 1:</strong> Justin and Michael meet at a wellness trade show — on opposite sides, selling competing products.</div></div>
             <div class="hitem"><div class="hdot"></div><div class="htxt"><strong style="color:#36291D">Day 3:</strong> End up at the same beach bar. Instant friendship.</div></div>
             <div class="hitem"><div class="hdot"></div><div class="htxt"><strong style="color:#36291D">Year 2:</strong> Both independently discover red light therapy — Mike for his back, Justin for his shoulder.</div></div>
             <div class="hitem"><div class="hdot"></div><div class="htxt"><strong style="color:#36291D">One phone call:</strong> "We have to do something with this." BioGlow is born. 🔴</div></div>
           </div>
           <div>
-            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.62);margin-bottom:1.2rem">Justin and Michael were never supposed to be partners. They were competitors at a trade show in Honolulu — both convinced their own approach was right.</p>
-            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.62);margin-bottom:1.2rem">Then the show floor closed, everyone ended up at the same beach bar, and somewhere between rounds they realized they shared one frustration: the most powerful wellness technologies in the world were locked behind walls most people couldn't get through.</p>
-            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.62);margin-bottom:1.2rem">Light therapy entered both their lives separately. Mike had a chronic lower back issue. Justin had a rotator cuff his doctors said he'd "just have to live with." Red light therapy changed both of their lives.</p>
-            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.62)">They got on a call. "Did you know a Nobel Prize was awarded for this in 1903?" Neither had a good answer for why nobody knew. So they decided to do something about it.</p>
+            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.91);margin-bottom:1.2rem">Justin and Michael were never supposed to be partners. They were competitors at a trade show in Honolulu — both convinced their own approach was right.</p>
+            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.91);margin-bottom:1.2rem">Then the show floor closed, everyone ended up at the same beach bar, and somewhere between rounds they realized they shared one frustration: the most powerful wellness technologies in the world were locked behind walls most people couldn't get through.</p>
+            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.91);margin-bottom:1.2rem">Light therapy entered both their lives separately. Mike had a chronic lower back issue. Justin had a rotator cuff his doctors said he'd "just have to live with." Red light therapy changed both of their lives.</p>
+            <p style="font-size:.95rem;line-height:1.9;color:rgba(58,44,30,.91)">They got on a call. "Did you know a Nobel Prize was awarded for this in 1903?" Neither had a good answer for why nobody knew. So they decided to do something about it.</p>
           </div>
         </div>
       </div>
@@ -2319,8 +2330,8 @@ p{color:#4A3826}
           <span class="ft-logo-txt">Bio<b>Glow</b></span>
         </div>
         <p class="ft-desc">Advanced red light therapy for pain relief, anti-aging, and whole-body wellness. Nobel Prize-backed. 120+ years of science. Finally portable.</p>
-        <p style="font-size:.78rem;color:#857255;margin-top:.6rem">📧 <a href="mailto:Justin@bioglowred.com" style="color:#9C7A2C;font-weight:600">Justin@bioglowred.com</a> — CEO</p>
-        <p style="font-size:.78rem;color:#857255;margin-top:.25rem">📧 <a href="mailto:Mike@bioglowred.com" style="color:#9C7A2C;font-weight:600">Mike@bioglowred.com</a> — CPO</p>
+        <p style="font-size:.78rem;color:#5E4D36;margin-top:.6rem">📧 <a href="mailto:Justin@bioglowred.com" style="color:#9C7A2C;font-weight:600">Justin@bioglowred.com</a> — CEO</p>
+        <p style="font-size:.78rem;color:#5E4D36;margin-top:.25rem">📧 <a href="mailto:Mike@bioglowred.com" style="color:#9C7A2C;font-weight:600">Mike@bioglowred.com</a> — CPO</p>
       </div>
       <div class="ft-col"><h4>Product</h4><ul>
         <li><a onclick="goHome();setTimeout(function(){gotoSection('features');},100)">Device Features</a></li>
@@ -2342,7 +2353,7 @@ p{color:#4A3826}
       </ul></div>
     </div>
     <div style="text-align:center;padding-bottom:1rem;border-bottom:1px solid rgba(74,54,30,.04);margin-bottom:1rem">
-      <span style="font-size:.68rem;color:rgba(133,114,85,.45);letter-spacing:.04em">All sales are final — no refunds. Exchanges accepted. By completing your purchase you agree to our no-refund/exchange policy. For exchanges contact Justin@bioglowred.com.</span>
+      <span style="font-size:.68rem;color:#5E4D36;letter-spacing:.04em">All sales are final — no refunds. Exchanges accepted. By completing your purchase you agree to our no-refund/exchange policy. For exchanges contact Justin@bioglowred.com.</span>
     </div>
     <div class="ft-bot">
       <div class="ft-copy">© 2026 BioGlow. All rights reserved.</div>
@@ -2372,7 +2383,7 @@ p{color:#4A3826}
      FAMILY & FRIENDS PAGE
 ══════════════════════════════ -->
 <div id="page-family" class="page">
-<div style="min-height:100vh;background:#F4ECDC;padding:0">
+<div style="min-height:100vh;background:#E7DBBF;padding:0">
 
   <!-- Top nav bar - mobile only -->
   <div class="portal-mini-nav" style="height:64px;background:rgba(244,236,220,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
@@ -2387,19 +2398,19 @@ p{color:#4A3826}
 
   <!-- GATE -->
   <div id="family-gate" style="max-width:480px;margin:0 auto;padding:2rem 1.2rem">
-    <div style="background:#FFFDF8;border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
+    <div style="background:#F1E7CD;border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9C7A2C,transparent)"></div>
       <div style="font-size:2rem;margin-bottom:.8rem">🤍</div>
-      <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#857255;margin-bottom:.4rem">Exclusive</div>
+      <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem">Exclusive</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#36291D;line-height:1.1;margin-bottom:.3rem">Friends &amp; Family<br>Special Pricing</div>
       <div style="width:40px;height:1px;background:rgba(201,169,110,.4);margin:.8rem auto 1rem"></div>
       <div style="background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:12px;padding:1rem;margin-bottom:1.5rem">
         <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.4rem">What you get</div>
-        <div style="font-size:.85rem;color:rgba(58,44,30,.65);line-height:1.8">
+        <div style="font-size:.85rem;color:rgba(58,44,30,.92);line-height:1.8">
           BioGlow Red+ device<br>
           <span style="color:#9C7A2C">+</span> Lifetime Warranty included<br>
           <span style="color:#9C7A2C">+</span> Full treatment protocol access<br>
-          <span style="color:#A8772E;font-weight:500">All for $1,250 — exclusively for you</span>
+          <span style="color:#9C7A2C;font-weight:500">Enter your code to reveal your exclusive price</span>
         </div>
       </div>
       <input id="family-input" type="text" inputmode="text" placeholder="Enter your access code"
@@ -2413,7 +2424,7 @@ p{color:#4A3826}
         ✦ &nbsp;Access My Deal
       </button>
       <div id="family-error" style="margin-top:.8rem;font-size:.78rem;color:#A8772E;display:none">Incorrect code. Contact Justin or Mike for your code.</div>
-      <div style="margin-top:1rem;font-size:.7rem;color:rgba(58,44,30,.18);line-height:1.7">Exclusively for friends &amp; family of the BioGlow founders.</div>
+      <div style="margin-top:1rem;font-size:.7rem;color:rgba(58,44,30,.9);line-height:1.7">Exclusively for friends &amp; family of the BioGlow founders.</div>
     </div>
   </div>
 
@@ -2423,21 +2434,21 @@ p{color:#4A3826}
       <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.5rem">✦ Welcome to the family</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#36291D;line-height:1.1">Your exclusive deal<br>is unlocked.</div>
     </div>
-    <div style="background:#FFFDF8;border:1px solid rgba(201,169,110,.3);border-radius:18px;padding:2rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.2rem">
+    <div style="background:#F1E7CD;border:1px solid rgba(201,169,110,.3);border-radius:18px;padding:2rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.2rem">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9C7A2C,transparent)"></div>
-      <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#857255;margin-bottom:.4rem">Friends &amp; Family Price</div>
+      <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem">Friends &amp; Family Price</div>
       <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:.3rem">
         <span style="font-size:3.2rem;font-weight:500;color:#36291D;font-family:'Cormorant Garamond',serif;line-height:1">$1,250</span>
-        <span style="font-size:1.1rem;color:rgba(58,44,30,.3);text-decoration:line-through">$5,999</span>
+        <span style="font-size:1.1rem;color:rgba(58,44,30,.94);text-decoration:line-through">$5,999</span>
       </div>
-      <div style="font-size:.78rem;color:rgba(58,44,30,.4);margin-bottom:1.5rem">You save $4,749 · Lifetime warranty included · Free shipping</div>
+      <div style="font-size:.78rem;color:rgba(58,44,30,.76);margin-bottom:1.5rem">You save $4,749 · Lifetime warranty included · Free shipping</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.5rem;text-align:left">
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>BioGlow Red+ device</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Lifetime warranty</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Treatment protocols</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Free US shipping</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>USB-C charging base</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Priority support</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>BioGlow Red+ device</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Lifetime warranty</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Treatment protocols</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Free US shipping</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>USB-C charging base</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Priority support</div>
       </div>
       <button type="button"
         onclick="location.href=_d(_uF)"
@@ -2445,10 +2456,10 @@ p{color:#4A3826}
         style="width:100%;background:linear-gradient(135deg,#9C7A2C,#8A6A30);color:#F4ECDC;padding:1.1rem;border-radius:10px;border:none;font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;margin-bottom:.6rem;font-family:'Outfit',sans-serif">
         🛒 &nbsp;Claim My Deal — $1,250
       </button>
-      <div style="font-size:.7rem;color:rgba(58,44,30,.25)">Secure checkout · Stripe encrypted · US shipping included</div>
+      <div style="font-size:.7rem;color:rgba(58,44,30,.8)">Secure checkout · Stripe encrypted · US shipping included</div>
     </div>
     <div style="background:rgba(74,54,30,.02);border:1px solid rgba(74,54,30,.07);border-radius:12px;padding:1.1rem;text-align:center">
-      <div style="font-size:.75rem;color:rgba(58,44,30,.4);line-height:1.8">Questions? Reach out directly:<br>
+      <div style="font-size:.75rem;color:rgba(58,44,30,.76);line-height:1.8">Questions? Reach out directly:<br>
         <span style="color:#9C7A2C">Justin@bioglowred.com</span> &nbsp;·&nbsp; <span style="color:#9C7A2C">Mike@bioglowred.com</span>
       </div>
     </div>
@@ -2465,7 +2476,7 @@ p{color:#4A3826}
      WHOLESALE PAGE
 ══════════════════════════════ -->
 <div id="page-wholesale" class="page">
-<div style="min-height:100vh;background:#F4ECDC;padding:0">
+<div style="min-height:100vh;background:#E7DBBF;padding:0">
 
   <!-- Top nav bar - mobile only -->
   <div class="portal-mini-nav" style="height:64px;background:rgba(244,236,220,.98);border-bottom:1px solid rgba(201,169,110,.2);display:flex;align-items:center;padding:0 20px;gap:16px;position:sticky;top:0;z-index:100">
@@ -2480,17 +2491,17 @@ p{color:#4A3826}
 
   <!-- GATE -->
   <div id="wholesale-gate" style="max-width:480px;margin:0 auto;padding:2rem 1.2rem">
-    <div style="background:#FFFDF8;border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
+    <div style="background:#F1E7CD;border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:2.5rem;text-align:center;position:relative;overflow:hidden">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9C7A2C,transparent)"></div>
 
       <div style="font-size:2rem;margin-bottom:.8rem">🔑</div>
-      <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#857255;margin-bottom:.4rem">Authorized Resellers Only</div>
+      <div style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem">Authorized Resellers Only</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#36291D;line-height:1.1;margin-bottom:.3rem">Wholesale<br>Pricing</div>
       <div style="width:40px;height:1px;background:rgba(201,169,110,.4);margin:.8rem auto 1rem"></div>
 
       <div style="background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:12px;padding:1rem;margin-bottom:1.5rem">
         <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#9C7A2C;margin-bottom:.4rem">What you get</div>
-        <div style="font-size:.85rem;color:rgba(58,44,30,.65);line-height:1.8">
+        <div style="font-size:.85rem;color:rgba(58,44,30,.92);line-height:1.8">
           BioGlow Red+ device<br>
           <span style="color:#9C7A2C">+</span> Lifetime Warranty included<br>
           <span style="color:#9C7A2C">+</span> Full treatment protocol access<br>
@@ -2500,7 +2511,7 @@ p{color:#4A3826}
 
       <div style="background:rgba(176,135,66,.08);border:1px solid rgba(176,135,66,.25);border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;text-align:left;display:flex;gap:.6rem;align-items:flex-start">
         <span style="color:#A8772E;flex-shrink:0">⚠️</span>
-        <div style="font-size:.77rem;color:rgba(58,44,30,.6);line-height:1.7"><strong style="color:#36291D">Minimum 10 units per order.</strong> Wholesale pricing requires a minimum of 10 units. Contact Justin or Mike to arrange your bulk order.</div>
+        <div style="font-size:.77rem;color:rgba(58,44,30,.9);line-height:1.7"><strong style="color:#36291D">Minimum 10 units per order.</strong> Wholesale pricing requires a minimum of 10 units. Contact Justin or Mike to arrange your bulk order.</div>
       </div>
 
       <input id="wholesale-input" type="text" inputmode="text" placeholder="Enter your wholesale code"
@@ -2514,7 +2525,7 @@ p{color:#4A3826}
         ✦ &nbsp;Access Wholesale Price
       </button>
       <div id="wholesale-error" style="margin-top:.8rem;font-size:.78rem;color:#A8772E;display:none">Incorrect code. Contact Justin directly for your wholesale code.</div>
-      <div style="margin-top:1rem;font-size:.7rem;color:rgba(58,44,30,.18);line-height:1.7">This portal is exclusively for authorized wholesale partners.<br>Contact <span style="color:rgba(201,169,110,.4)">Justin@bioglowred.com</span> to apply.</div>
+      <div style="margin-top:1rem;font-size:.7rem;color:rgba(58,44,30,.9);line-height:1.7">This portal is exclusively for authorized wholesale partners.<br>Contact <span style="color:rgba(201,169,110,.4)">Justin@bioglowred.com</span> to apply.</div>
     </div>
   </div>
 
@@ -2525,21 +2536,21 @@ p{color:#4A3826}
       <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#36291D;line-height:1.1">Your wholesale price<br>is unlocked.</div>
     </div>
 
-    <div style="background:#FFFDF8;border:1px solid rgba(201,169,110,.35);border-radius:18px;padding:2rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.2rem">
+    <div style="background:#F1E7CD;border:1px solid rgba(201,169,110,.35);border-radius:18px;padding:2rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.2rem">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#9C7A2C,transparent)"></div>
-      <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#857255;margin-bottom:.4rem">Wholesale Price</div>
+      <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#5E4D36;margin-bottom:.4rem">Wholesale Price</div>
       <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:.3rem">
         <span style="font-size:3.2rem;font-weight:500;color:#9C7A2C;font-family:'Cormorant Garamond',serif;line-height:1">$850</span>
-        <span style="font-size:1.1rem;color:rgba(58,44,30,.3);text-decoration:line-through">$5,999</span>
+        <span style="font-size:1.1rem;color:rgba(58,44,30,.94);text-decoration:line-through">$5,999</span>
       </div>
-      <div style="font-size:.78rem;color:rgba(58,44,30,.4);margin-bottom:1.5rem">You save $5,149 · Lifetime warranty included · Free shipping</div>
+      <div style="font-size:.78rem;color:rgba(58,44,30,.76);margin-bottom:1.5rem">You save $5,149 · Lifetime warranty included · Free shipping</div>
 
       <div style="background:rgba(176,135,66,.1);border:1px solid rgba(176,135,66,.3);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1.2rem;text-align:left">
         <div style="display:flex;gap:.6rem;align-items:flex-start">
           <span style="color:#A8772E;flex-shrink:0">⚠️</span>
           <div>
             <div style="font-size:.8rem;font-weight:500;color:#36291D;margin-bottom:.2rem">Minimum order: 10 units required</div>
-            <div style="font-size:.75rem;color:rgba(58,44,30,.5);line-height:1.7">This price applies to orders of 10+ units only. To place your bulk order, contact Justin at <span style="color:#9C7A2C">Justin@bioglowred.com</span> or Mike at <span style="color:#9C7A2C">Mike@bioglowred.com</span> with your quantity and shipping details.</div>
+            <div style="font-size:.75rem;color:rgba(58,44,30,.88);line-height:1.7">This price applies to orders of 10+ units only. To place your bulk order, contact Justin at <span style="color:#9C7A2C">Justin@bioglowred.com</span> or Mike at <span style="color:#9C7A2C">Mike@bioglowred.com</span> with your quantity and shipping details.</div>
           </div>
         </div>
       </div>
@@ -2549,18 +2560,18 @@ p{color:#4A3826}
           <span style="color:#A8772E;font-size:1rem;flex-shrink:0">⚠️</span>
           <div>
             <div style="font-size:.8rem;font-weight:500;color:#36291D;margin-bottom:.2rem">Minimum order: 10 units required</div>
-            <div style="font-size:.75rem;color:rgba(58,44,30,.5);line-height:1.7">Wholesale pricing applies to orders of 10 or more BioGlow Red+ units. To place a bulk order, contact Justin directly at <span style="color:#9C7A2C">Justin@bioglowred.com</span> with your order details.</div>
+            <div style="font-size:.75rem;color:rgba(58,44,30,.88);line-height:1.7">Wholesale pricing applies to orders of 10 or more BioGlow Red+ units. To place a bulk order, contact Justin directly at <span style="color:#9C7A2C">Justin@bioglowred.com</span> with your order details.</div>
           </div>
         </div>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.5rem;text-align:left">
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>BioGlow Red+ device</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Lifetime warranty</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Treatment protocols</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Free US shipping</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>USB-C charging base</div>
-        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.6)"><span style="color:#9C7A2C">✦</span>Priority support</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>BioGlow Red+ device</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Lifetime warranty</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Treatment protocols</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Free US shipping</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>USB-C charging base</div>
+        <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(58,44,30,.9)"><span style="color:#9C7A2C">✦</span>Priority support</div>
       </div>
 
       <button type="button"
@@ -2569,11 +2580,11 @@ p{color:#4A3826}
         style="width:100%;background:linear-gradient(135deg,#9C7A2C,#8A6A30);color:#F4ECDC;padding:1.1rem;border-radius:10px;border:none;font-size:.88rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;font-family:'Outfit',sans-serif;margin-bottom:.6rem">
         🛒 &nbsp;Order Wholesale — $850
       </button>
-      <div style="font-size:.7rem;color:rgba(58,44,30,.25)">Secure checkout · Stripe encrypted · Authorized resellers only</div>
+      <div style="font-size:.7rem;color:rgba(58,44,30,.8)">Secure checkout · Stripe encrypted · Authorized resellers only</div>
     </div>
 
     <div style="background:rgba(74,54,30,.02);border:1px solid rgba(74,54,30,.07);border-radius:12px;padding:1.1rem;text-align:center">
-      <div style="font-size:.75rem;color:rgba(58,44,30,.4);line-height:1.8">Questions? Contact:<br>
+      <div style="font-size:.75rem;color:rgba(58,44,30,.76);line-height:1.8">Questions? Contact:<br>
         <span style="color:#9C7A2C">Justin@bioglowred.com</span>
       </div>
     </div>
@@ -3055,7 +3066,7 @@ function simulateVisitors() {
     var p = getNext();
     var mins = Math.floor(2 + Math.random()*45);
     var timeStr = mins < 60 ? mins+' min ago' : Math.floor(mins/60)+'h ago';
-    el.innerHTML = '<div style="display:flex;align-items:flex-start;gap:8px"><span style="font-size:1.1rem">🛍️</span><div><div style="font-size:.82rem;font-weight:600;color:#36291D">'+p.name+' — '+p.city+'</div><div style="font-size:.76rem;color:rgba(58,44,30,.65);margin-top:2px">'+p.reason+'</div><div style="font-size:.68rem;color:rgba(58,44,30,.3);margin-top:3px">✓ Verified Purchase · '+timeStr+'</div></div></div>';
+    el.innerHTML = '<div style="display:flex;align-items:flex-start;gap:8px"><span style="font-size:1.1rem">🛍️</span><div><div style="font-size:.82rem;font-weight:600;color:#36291D">'+p.name+' — '+p.city+'</div><div style="font-size:.76rem;color:rgba(58,44,30,.92);margin-top:2px">'+p.reason+'</div><div style="font-size:.68rem;color:rgba(58,44,30,.94);margin-top:3px">✓ Verified Purchase · '+timeStr+'</div></div></div>';
     el.style.transform = 'translateY(0)';
     el.style.opacity = '1';
     setTimeout(function(){ el.style.transform = 'translateY(120px)'; el.style.opacity = '0'; }, 6000);
